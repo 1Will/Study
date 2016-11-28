@@ -36,12 +36,27 @@
 <li>Pomato</li>
 <li>Apple<p><span></span></p></li>
 
-</UL>
+</UL> 
+
+<form id="my_form">
+<input type="text"/>
+<input type="radio"/>
+<input type="radio" checked="checked"/>
+<input type="checkbox"/>
+<input type="checkbox" checked="checked"/>
+</form>
+
+<select id="set"multiple="multiple">
+<option value="0">苹果</option>
+<option value="1"selected="selected">西瓜</option>
+<option value="2">荔枝</option>
+<option value="3"selected="selected">葡萄</option>
+</select>
 			
 <script type="text/javascript">
-/* $("li:first").css('color','red'); */
-/* $("li:first-child").css('color','red');
-$("li:last-child").css('color','red'); */
+/*$("li:first").css('color','red');*/
+/*$("li:first-child").css('color','red');*/
+/*$("li:last-child").css('color','red'); */
 /*$("#to").html($("#from").html())
 $(".fruit").css('color', '#58E431')
 $(".fruit,#tomato").css('color','#9F6691') */
@@ -54,9 +69,12 @@ $('p+label').css('color','blue') */
 /* $('li:eq(0)').css('color','red') */
 /* $('li:contains(Ap)').css('color','blue') */
 /*  $('li:has(span)').css('color','blue') */
-/* $('p:hidden').show();
-$('p:visible').hide(); */
-$('input[id=ipt]').val("hello")
+/* $('p:hidden').show();*/
+/* $('p:visible').hide(); */
+/* $('input[id=ipt]').val("hellohellohellohellohello") */
+/* console.log($('#my_form : input:checked')); */
+/* console.log($('#set:selected'))*/
+ 
 </script>
 </body>
 </html>
