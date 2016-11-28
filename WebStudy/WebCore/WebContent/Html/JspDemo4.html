@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+<script>
+ window.onload=initAll; 
+function initAll() {
+	document.getElementsByTagName("form")[0].onsubmit = function(){return addNode();}
+} 
+function addNode(){
+var inText=document.getElementById("textArea").value;
+
+var newText=document.createTextNode(inText);
+var newGraf=document.createElement("p");
+	newGraf.appendChild(newText);
+var docBody=document.getElementsByTagName("body")[0];
+	docBody.appendChild(newGraf);
+	return false;
+}
+function delNode() {
+	var allGrafs=document.getElementsByTagName("p");
+	if(allGrafs.length>1){
+var lastGraf=allGrafs.item(allGrafs.length-1);
+var docBody=document.getElementsByTagName("body")[0]
+docBody.removeChild(lastGraf);
+}
+}
+
+</script>  
+</head >
+
+<body>
+<form>
+<p><textarea id= "textArea" row="5"cols="30"></textarea>
+<input type="button" value="Add">
+<input type="button" value="delete"onclick="delNode()">
+</p>
+<ol id="oll">
+<li>www</li>
+<li>ccc</li>
+<li>ttt</li>
+</ol>
+</form>
+</body>
+</html>
