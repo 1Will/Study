@@ -51,7 +51,6 @@ table {
 							a = a + "<td id='"+b+++"'>";
 							a = a + j + "*" + i + "=" + i * j;
 							a = a + "</td>"
-
 						}
 					}
 					a = a + "<td id='"+b+++"'>" + "</td>";
@@ -77,15 +76,20 @@ table {
 		if(!isNaN(b1)){
 		b=b+b1;
 		}
-		$('#tab').find('tr').eq(5).find('td').eq(10).text(b)
 	}
+		if(j==0){
+		$('#tab').find('tr').eq(j).find('td').eq(10).text('统计数据')
+		}else{
+		$('#tab').find('tr').eq(j).find('td').eq(10).text(b)
+		}
 		}
 	}
 		$('#button2').bind('click', function() {
-			$('#tab').find('tr').eq(0).find('td').eq(10).text('统计数据')
 			$('#tab').find('tr').eq(10).find('td').eq(0).text('统计数据')
 			dealTR();
 		})
+		
+		
 		$('#button3').bind('click', function() {
 			$('#tab').css({
 				/* border-width: '1px 0px 0px 1px', */
