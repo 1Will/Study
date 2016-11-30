@@ -12,33 +12,39 @@
 </head>
 <body>
 <h1 align='center'>乘法口诀表</h1>
+	<input style="width: 90px" id="inp" type="text" value='请输入数字'>
 	<button id=button1 type="button">打印乘法口诀表</button>
 	<button id=button2 type="button">统计</button>
 	<button id=button3 type="button">样式</button>
+	<button id=button4 type="button">动起来！</button>
 
 	<script type="text/javascript">
 		$('#button1').bind('click', function() {
+			var x1=$('#inp').val();
+			var x2=parseInt(x1);
+			var x=x2+1;
+			alert("即将打印"+x2+"x"+x2+"的乘法口诀表！");
 			var b = 0;
 			var a = "";
-			for (var i = 0; i <= 10; i++) {
+			for (var i = 0; i <= x; i++) {
 				if (i == 0) {
 					a = a + "<tr id='"+b+++"'>";
-					for (var j1 = 0; j1 <= 10; j1++) {
+					for (var j1 = 0; j1 <= x; j1++) {
 						a = a + "<td id='"+b+++"'>" + "</td>";
 					}
 					a = a + "</tr>"
 				} else {
-					if (i == 10) {
+					if (i == x) {
 
 						a = a + "<tr id='"+b+++"'>";
-						for (var j1 = 0; j1 <= 10; j1++) {
+						for (var j1 = 0; j1 <= x; j1++) {
 							a = a + "<td id='"+b+++"'>" + "</td>";
 						}
 						a = a + "</tr>"
 					} else {
 						a = a + "<tr id='"+b+++"'>";
 						a = a + "<td id='"+b+++"'>" + "</td>";
-						for (var j = 1; j <= 9; j++) {
+						for (var j = 1; j <= x2; j++) {
 							if (j > i) {
 								a = a + "<td id='"+b+++"'>"
 								a = a + "&nbsp;";
@@ -62,10 +68,10 @@
 	</script>
 
 	<script type="text/javascript">
-		function dealTD() {
-			for (var j = 0; j <= 10; j++) {
+		function dealTD(x) {
+			for (var j = 0; j <= x+1; j++) {
 				var b = 0;
-				for (var i = 0; i <= 10; i++) {
+				for (var i = 0; i <= x+1; i++) {
 					var n = $('#tab').find('tr').eq(i).find('td').eq(j).text()
 					var m = n.split('=');
 					var b1 = parseInt(m[1]);
@@ -74,17 +80,17 @@
 					}
 				}
 				if (j == 0) {
-					$('#tab').find('tr').eq(10).find('td').eq(j).text('统计数据')
+					$('#tab').find('tr').eq(x+1).find('td').eq(j).text('统计数据')
 				} else {
-					$('#tab').find('tr').eq(10).find('td').eq(j).text(b)
+					$('#tab').find('tr').eq(x+1).find('td').eq(j).text(b)
 				}
 			}
 		}
 
-		function dealTR() {
-			for (var j = 0; j <= 10; j++) {
+		function dealTR(x) {
+			for (var j = 0; j <= x+1; j++) {
 				var b = 0;
-				for (var i = 0; i <= 10; i++) {
+				for (var i = 0; i <= x+1; i++) {
 					var n = $('#tab').find('tr').eq(j).find('td').eq(i).text()
 					var m = n.split('=');
 					var b1 = parseInt(m[1]);
@@ -93,17 +99,17 @@
 					}
 				}
 				if (j == 0) {
-					$('#tab').find('tr').eq(j).find('td').eq(10).text('统计数据')
+					$('#tab').find('tr').eq(j).find('td').eq(x+1).text('统计数据')
 				} else {
-					$('#tab').find('tr').eq(j).find('td').eq(10).text(b)
+					$('#tab').find('tr').eq(j).find('td').eq(x+1).text(b)
 				}
 			}
 		}
 
-		function dealTT() {
+		function dealTT(x) {
 			var b = 0;
-			for (var j = 0; j <= 10; j++) {
-				for (var i = 0; i <= 10; i++) {
+			for (var j = 0; j <= x+1; j++) {
+				for (var i = 0; i <= x+1; i++) {
 					if (i == j) {
 						var n = $('#tab').find('tr').eq(i).find('td').eq(j)
 								.text()
@@ -115,13 +121,15 @@
 					}
 				}
 			}
-			$('#tab').find('tr').eq(10).find('td').eq(10).text(b)
+			$('#tab').find('tr').eq(x+1).find('td').eq(x+1).text(b)
 		}
 
 		$('#button2').bind('click', function() {
-			dealTR();
-			dealTD();
-			dealTT();
+			var x1=$('#inp').val();
+			var x=parseInt(x1);
+			dealTR(x);
+			dealTD(x);
+			dealTT(x);
 		})
 
 		$('#button3').bind('click', function() {
@@ -136,6 +144,10 @@
 				margin : '0 auto'
 			})
 		})
+		
+		$('#inp').bind('click',function(){
+			$('#inp').val("");
+		});
 	</script>
 	<hr />
 	<table id='tab' border='1' align='center' cellspacing='0'
