@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+<!--
+
+table {
+	;
+}
+</style>
+<script src="../Javascript/jquery.min.js">
+	
+</script>
+
+</head>
+<body>
+	<button id=button1 type="button">打印乘法口诀表</button>
+	<button id=button2 type="button">统计</button>
+	<button id=button3 type="button">样式</button>
+
+	<script type="text/javascript">
+		$('#button1').bind('click', function() {
+			var b = 0;
+			var a = "";
+			for (var i = 0; i <= 10; i++) {
+				if (i == 0) {
+					a = a + "<tr id='"+b+++"'>";
+					for (var j1 = 0; j1 <= 10; j1++) {
+						a = a + "<td id='"+b+++"'>" + "</td>";
+					}
+					a = a + "</tr>"
+				}else{
+					if (i == 10) {
+				
+					a = a + "<tr id='"+b+++"'>";
+					for (var j1 = 0; j1 <= 10; j1++) {
+						a = a + "<td id='"+b+++"'>" + "</td>";
+					}
+					a = a + "</tr>"
+				} else {
+					a = a + "<tr id='"+b+++"'>";
+					a = a + "<td id='"+b+++"'>" + "</td>";
+					for (var j = 1; j <= 9; j++) {
+						if (j > i) {
+							a = a + "<td id='"+b+++"'>"
+							a = a + "&nbsp;";
+							a = a + "</td>";
+						} else {
+							a = a + "<td id='"+b+++"'>";
+							a = a + j + "*" + i + "=" + i * j;
+							a = a + "</td>"
+
+						}
+					}
+					a = a + "<td id='"+b+++"'>" + "</td>";
+					a = a + "</tr>"
+				}
+			}
+		}
+			a = a + "</table>";
+			if($('tab tr').length == 0){
+			$('#tab').append(a)
+			}
+		})
+	</script>
+
+	<script type="text/javascript">
+	function dealTR() {
+		for(var j=0;j<=10;j++){
+		var b=0;
+		for(var i=0;i<=10;i++){
+		var n=$('#tab').find('tr').eq(j).find('td').eq(i).text()
+		var m=n.split('=');
+		var b1=parseInt(m[1]);
+		if(!isNaN(b1)){
+		b=b+b1;
+		}
+		$('#tab').find('tr').eq(5).find('td').eq(10).text(b)
+	}
+		}
+	}
+		$('#button2').bind('click', function() {
+			$('#tab').find('tr').eq(0).find('td').eq(10).text('统计数据')
+			$('#tab').find('tr').eq(10).find('td').eq(0).text('统计数据')
+			dealTR();
+		})
+		$('#button3').bind('click', function() {
+			$('#tab').css({
+				/* border-width: '1px 0px 0px 1px', */
+				background: '#54CDF3'
+			})
+			$('td').css({
+				color: 'red'
+			})
+		})
+	</script>
+	<!-- <input id="button1" type="button" name="button" value="打印" /> -->
+	<hr />
+	<table id='tab' border='1' align='center' cellspacing='0'
+		cellpadding='5'>
+	</table>
+
+</body>
+</html>

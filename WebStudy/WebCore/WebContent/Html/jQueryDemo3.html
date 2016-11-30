@@ -4,20 +4,38 @@
 <meta charset="UTF-8">
 <title>简单的样式表2</title>
 <script src="../Javascript/jquery.min.js">
-function warn(){
-	alert("错误！！");
-}
+
 </script>
 </head>
 <body>
-<input id="btn" type="button"value="点我"/>
 
+<!-- <input id="btn" type="button"value="点我"/> -->
+<form id="text" type="text"value="文本框"/>
+</form>
+<script>
+/* $().ready(function(){
+	warnn();
+}); */
+</script>
 <script type="text/javascript">
-$(function(){
+$('input').focus(function(){
+	$('input').css("border='8px'")
+})
+/* $('#btn').hover(warn1,warn2);
+function warn1(){
+	alert("滚！！");
+}
+function warn2(){
+	alert("来..");
+} */
+/* function warnn(){
+	alert("错误！！");
+} */
+/* $(function(){
 	$('#btn').bind('click',function(){
 		$(this).attr('disabled','true');
 	})
-})
+}) */
 </script>
 </body>
 </html>

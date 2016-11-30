@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>广告1</title>
+<!-- <style type="text/css">
+<!--
+.one {
+	border-style: solid;
+	border: 1;
+	border-color: #EFEFEF;
+}
+-->
+</style>
+
+<script src="../Javascript/jquery.min.js">
+	
+</script>
+<script type="text/javascript">
+	$(function() {
+		$('body').bind('mouseover', function() {
+			for (var a = 1; a <= 10; a--) {
+				$('div').animate({
+					top : '600px',
+					left : '600px',
+					width : '240px',
+					height : '120px'
+				}, 3000);
+				$('div').animate({
+					top : '300px',
+					left : '1100px',
+					width : '320px',
+					height : '160px'
+				}, 3000);
+				$('div').animate({
+					top : '10px',
+					left : '600px',
+					width : '240px',
+					height : '120px'
+				}, 3000);
+				$('div').animate({
+					top : '300px',
+					left : '10px',
+					width : '320px',
+					height : '160px'
+				}, 3000);
+			}
+		});
+
+	})
+</script>
+</head>
+<body>
+
+	<div
+		style="background: #B4CDE6; position: relative; left: 10px; top: 300px; width: 320px; height: 160px; border: 3px solid blue;">
+		<center>
+			<h2>
+				<b>紧急通知:</b>
+			</h2>
+		</center>
+		<p>&nbsp;&nbsp;明天停电！</p>
+		<p>&nbsp;&nbsp;明天停水！</p>
+	</div>
+	<!-- <button type="button">移动</button> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

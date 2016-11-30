@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>简单的样式表4</title>
+<style type="text/css">
+<!--
+.one 
+{
+border-style: solid;
+border: 1;
+border-color: #EFEFEF;
+}
+-->
+</style>
+<script src="../Javascript/jquery.min.js" >
+
+
+</script>
+</head>
+<body>
+<input class="one" id="text" type="text"value="文本框"/>
+<br/>
+<div>
+<p>Hello World1<p/>
+<p><b>Hello World2</b><p/>
+<p><i>Hello World3</i><p/>
+</div>
+<!-- <input id="but" type="button"name=button value="隐藏" onclick="clicked()"/>
+<input id="but" type="button"name=button value="显示" onclick="showed()"/> -->
+
+<input id="but" type="button" name="button" value="隐藏" onclick = "doit()"/>
+
+<script type="text/javascript">
+$(".one").focus(function(){
+	$(".one").css("border-color","#575E66")
+})
+
+$(".one").blur(function(){
+	$(".one").css("border-color","#EFEFEF")
+})
+
+function doit() {
+	if($('#but').attr('value')=='隐藏'){
+		$('#but').attr('value','显示');
+		hideed();
+	}else{
+		$('#but').attr('value','隐藏');
+		showed();
+	}
+}
+
+function hideed(){
+	$('div').hide('slow');
+}
+
+function showed(){
+	$('div').show('slow');
+}
+
+</script>
+
+	
+</body>
+</html>
