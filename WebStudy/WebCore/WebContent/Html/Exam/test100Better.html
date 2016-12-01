@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<script src="../../Javascript/jquery.min.js">
+	
+</script>
+
+</head>
+<body>
+	<h1 align='center'>乘法口诀表</h1>
+	<input style="width: 90px" id="inp" type="text" value='请输入数字'>
+	<button id=button1 type="button">打印乘法口诀表</button>
+	<button id=button2 type="button">统计</button>
+	<button id=button3 type="button">样式</button>
+	<button id=button4 type="button">动起来！</button>
+
+	<script type="text/javascript">
+		$(function() {
+			$('#button4').bind('click', function() {
+				for (var a = 1; a <= 10; a++) {
+					$('#divv').animate({
+						top : '300px',
+						left : '10px',
+					}, 150);
+					$('#divv').animate({
+						top : '600px',
+						left : '600px',
+					}, 150);
+					$('#divv').animate({
+						top : '300px',
+						left : '1000px',
+					}, 150);
+					$('#divv').animate({
+						top : '120px',
+						left : '600px',
+					}, 150);
+				}
+			});
+
+		})
+	</script>
+
+
+	<script type="text/javascript">
+		$('#button1').bind('click', function() {
+			var x1 = $('#inp').val();
+			var x2 = parseInt(x1);
+			var x = x2 + 1;
+			alert("即将打印" + x2 + "x" + x2 + "的乘法口诀表！");
+			var b = 0;
+			var a = "";
+			for (var i = 0; i <= x; i++) {
+				if (i == 0) {
+					a = a + "<tr id='"+b+++"'>";
+					for (var j1 = 0; j1 <= x; j1++) {
+						a = a + "<td id='"+b+++"'>" + "</td>";
+					}
+					a = a + "</tr>"
+				} else {
+					if (i == x) {
+
+						a = a + "<tr id='"+b+++"'>";
+						for (var j1 = 0; j1 <= x; j1++) {
+							a = a + "<td id='"+b+++"'>" + "</td>";
+						}
+						a = a + "</tr>"
+					} else {
+						a = a + "<tr id='"+b+++"'>";
+						a = a + "<td id='"+b+++"'>" + "</td>";
+						for (var j = 1; j <= x2; j++) {
+							if (j > i) {
+								a = a + "<td id='"+b+++"'>"
+								a = a + "&nbsp;";
+								a = a + "</td>";
+							} else {
+								a = a + "<td id='"+b+++"'>";
+								a = a + j + "*" + i + "=" + i * j;
+								a = a + "</td>"
+							}
+						}
+						a = a + "<td id='"+b+++"'>" + "</td>";
+						a = a + "</tr>"
+					}
+				}
+			}
+			a = a + "</table>";
+			if ($('#tab tr').length == 0) {
+				$('#tab').append(a)
+			}
+		})
+	</script>
+
+	<script type="text/javascript">
+		function deal(a1) {
+			var num = a1 + 1;
+			var bevel = 0;
+			var row = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
+			var cow = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
+			for (var x = 0; x <= num; x++) {
+				for (var y = 0; y <= num; y++) {
+					var n = $('#tab').find('tr').eq(y).find('td').eq(x).text()
+					var m = n.split('=');
+					var a = parseInt(m[1]);
+					if (!isNaN(a)) {
+						row[x] += a;
+						cow[y] += a;
+						if (x == y) {
+							bevel += a;
+						}
+					}
+				}
+			}
+			for (var i = 0; i <= 10; i++) {
+				if (i == 0) {
+					$('#tab').find('tr').eq(num).find('td').eq(i).text('统计')
+					$('#tab').find('tr').eq(i).find('td').eq(num).text('统计')
+				} else {
+					$('#tab').find('tr').eq(num).find('td').eq(i).text(row[i]);
+					$('#tab').find('tr').eq(i).find('td').eq(num).text(cow[i]);
+				}
+			}
+			$('#tab').find('tr').eq(num).find('td').eq(num).text(bevel);
+		}
+
+		$('#button2').bind('click', function() {
+			var x1 = $('#inp').val();
+			var x = parseInt(x1);
+			deal(x);
+		})
+
+		$('#button3').bind('click', function() {
+			$('#tab').css({
+				background : '#54CDF3',
+			})
+			$('td').css({
+				width : '50px',
+				height : '25px',
+				color : 'red',
+				border : '1px solid black',
+				margin : '0 auto', 
+			})
+		})
+
+		$('#inp').bind('click', function() {
+			$('#inp').val("");
+		});
+	</script>
+	<hr />
+	<div id="divv" style="position: fixed; left: 600px; top: 120px;">
+		<table id='tab' border='1' align='center' cellspacing='0'
+			cellpadding='5'>
+		</table>
+	</div>
+</body>
+</html>
