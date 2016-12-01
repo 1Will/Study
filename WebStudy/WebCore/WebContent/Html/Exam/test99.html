@@ -5,73 +5,40 @@
 <title>Insert title here</title>
 <style type="text/css">
 </style>
-<script src="../Javascript/jquery.min.js">
+<script src="../../Javascript/jquery.min.js">
 	
 </script>
 
 </head>
 <body>
 <h1 align='center'>乘法口诀表</h1>
-	<input style="width: 90px" id="inp" type="text" value='请输入数字'>
 	<button id=button1 type="button">打印乘法口诀表</button>
 	<button id=button2 type="button">统计</button>
 	<button id=button3 type="button">样式</button>
-	<button id=button4 type="button">动起来！</button>
-
-<script type="text/javascript">
-	$(function() {
-		$('#button4').bind('click', function() {
-			for (var a = 1; a <= 10; a++) {
-				$('#divv').animate({
-					top : '300px',
-					left : '10px',
-				}, 150);
-				$('#divv').animate({
-					top : '600px',
-					left : '600px',
-				}, 150);
-				$('#divv').animate({
-					top : '300px',
-					left : '1000px',
-				}, 150);
-				$('#divv').animate({
-					top : '120px',
-					left : '600px',
-				}, 150);
-			}
-		});
-
-	})
-</script>
-
 
 	<script type="text/javascript">
 		$('#button1').bind('click', function() {
-			var x1=$('#inp').val();
-			var x2=parseInt(x1);
-			var x=x2+1;
-			alert("即将打印"+x2+"x"+x2+"的乘法口诀表！");
 			var b = 0;
 			var a = "";
-			for (var i = 0; i <= x; i++) {
+			for (var i = 0; i <= 10; i++) {
 				if (i == 0) {
 					a = a + "<tr id='"+b+++"'>";
-					for (var j1 = 0; j1 <= x; j1++) {
+					for (var j1 = 0; j1 <= 10; j1++) {
 						a = a + "<td id='"+b+++"'>" + "</td>";
 					}
 					a = a + "</tr>"
 				} else {
-					if (i == x) {
+					if (i == 10) {
 
 						a = a + "<tr id='"+b+++"'>";
-						for (var j1 = 0; j1 <= x; j1++) {
+						for (var j1 = 0; j1 <= 10; j1++) {
 							a = a + "<td id='"+b+++"'>" + "</td>";
 						}
 						a = a + "</tr>"
 					} else {
 						a = a + "<tr id='"+b+++"'>";
 						a = a + "<td id='"+b+++"'>" + "</td>";
-						for (var j = 1; j <= x2; j++) {
+						for (var j = 1; j <= 9; j++) {
 							if (j > i) {
 								a = a + "<td id='"+b+++"'>"
 								a = a + "&nbsp;";
@@ -95,10 +62,10 @@
 	</script>
 
 	<script type="text/javascript">
-		function dealTD(x) {
-			for (var j = 0; j <= x+1; j++) {
+		function dealTD() {
+			for (var j = 0; j <= 10; j++) {
 				var b = 0;
-				for (var i = 0; i <= x+1; i++) {
+				for (var i = 0; i <= 10; i++) {
 					var n = $('#tab').find('tr').eq(i).find('td').eq(j).text()
 					var m = n.split('=');
 					var b1 = parseInt(m[1]);
@@ -107,17 +74,17 @@
 					}
 				}
 				if (j == 0) {
-					$('#tab').find('tr').eq(x+1).find('td').eq(j).text('统计')
+					$('#tab').find('tr').eq(10).find('td').eq(j).text('统计数据')
 				} else {
-					$('#tab').find('tr').eq(x+1).find('td').eq(j).text(b)
+					$('#tab').find('tr').eq(10).find('td').eq(j).text(b)
 				}
 			}
 		}
 
-		function dealTR(x) {
-			for (var j = 0; j <= x+1; j++) {
+		function dealTR() {
+			for (var j = 0; j <= 10; j++) {
 				var b = 0;
-				for (var i = 0; i <= x+1; i++) {
+				for (var i = 0; i <= 10; i++) {
 					var n = $('#tab').find('tr').eq(j).find('td').eq(i).text()
 					var m = n.split('=');
 					var b1 = parseInt(m[1]);
@@ -126,17 +93,17 @@
 					}
 				}
 				if (j == 0) {
-					$('#tab').find('tr').eq(j).find('td').eq(x+1).text('统计')
+					$('#tab').find('tr').eq(j).find('td').eq(10).text('统计数据')
 				} else {
-					$('#tab').find('tr').eq(j).find('td').eq(x+1).text(b)
+					$('#tab').find('tr').eq(j).find('td').eq(10).text(b)
 				}
 			}
 		}
 
-		function dealTT(x) {
+		function dealTT() {
 			var b = 0;
-			for (var j = 0; j <= x+1; j++) {
-				for (var i = 0; i <= x+1; i++) {
+			for (var j = 0; j <= 10; j++) {
+				for (var i = 0; i <= 10; i++) {
 					if (i == j) {
 						var n = $('#tab').find('tr').eq(i).find('td').eq(j)
 								.text()
@@ -148,15 +115,13 @@
 					}
 				}
 			}
-			$('#tab').find('tr').eq(x+1).find('td').eq(x+1).text(b)
+			$('#tab').find('tr').eq(10).find('td').eq(10).text(b)
 		}
 
 		$('#button2').bind('click', function() {
-			var x1=$('#inp').val();
-			var x=parseInt(x1);
-			dealTR(x);
-			dealTD(x);
-			dealTT(x);
+			dealTR();
+			dealTD();
+			dealTT();
 		})
 
 		$('#button3').bind('click', function() {
@@ -164,24 +129,18 @@
 				background : '#54CDF3',
 			})
 			$('td').css({
-				width : '50px',
+				width : '80px',
 				height : '25px',
 				color : 'red',
 				border : '1px solid black',
 				margin : '0 auto'
 			})
 		})
-		
-		$('#inp').bind('click',function(){
-			$('#inp').val("");
-		});
 	</script>
 	<hr />
-	<div id="divv"
-		style=" position: fixed;left: 600px; top: 120px;">
 	<table id='tab' border='1' align='center' cellspacing='0'
 		cellpadding='5'>
 	</table>
-</div>
+
 </body>
 </html>
