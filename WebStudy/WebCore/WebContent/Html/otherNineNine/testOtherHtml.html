@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../Javascript/jquery.min.js">
+</script>
+</head>
+<body>
+<script type="text/javascript">
+/* 	$('#divv').hide('slow');
+	$("#divv").css('display','block');  */
+function showw(){
+ 	$('#divv1').show('slow'); 
+}
+function showe(){
+ 	$('#divv1').hide('slow'); 
+ 	$('#divv2').show('slow'); 
+}
+function showr(){
+ 	$('#divv2').hide('slow'); 
+ 	$('#divv3').show('slow'); 
+}
+</script>
+<h1 style="color: #398EFD" align="center"><b>乘法口诀表</b></h1>
+<hr/>
+<input id=button1 type="button" value="打印乘法口诀表" onclick="showw()">
+<input id=button2 type="button" value="统计" onclick="showe()">
+<input id=button3 type="button" value="样式" onclick="showr()">
+<hr/>
+<div id="divv1" align="center" style=" display: none;">
+<iframe style="border:0 solid red;width: 1000px;height: 800px;"src="nineNine1.html">....</iframe>
+</div>
+<div id="divv2" align="center" style=" display: none;">
+<iframe style="border:0 solid red;width: 1000px;height: 800px;"src="nineNine2.html">....</iframe>
+</div>
+<div id="divv3" align="center" style=" display: none;">
+<iframe style="border:0 solid red;width: 1000px;height: 800px;"src="nineNine3.html">....</iframe>
+</div>
+</body>
+</html>

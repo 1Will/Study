@@ -8,6 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@include file="SystemTime.html" %>>
+<%@include file="SystemTime.html" %>
 </body>
 </html>
