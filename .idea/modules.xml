@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FromLixinghua.iml" filepath="$PROJECT_DIR$/FromLixinghua.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaExam.iml" filepath="$PROJECT_DIR$/JavaExam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyIdea.iml" filepath="$PROJECT_DIR$/MyIdea.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyJavaWebCore.iml" filepath="$PROJECT_DIR$/MyJavaWebCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyWebCore.iml" filepath="$PROJECT_DIR$/MyWebCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StudyDemo.iml" filepath="$PROJECT_DIR$/StudyDemo.iml" />
+    </modules>
+  </component>
+</project>
