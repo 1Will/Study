@@ -14,9 +14,4 @@ public class TestJava{
 		可以编写多行
 	*/
 };
-class A
-{
-};
-class B
-{
-};
+

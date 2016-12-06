@@ -99,20 +99,22 @@
 		$('#button3').bind('click', function() {
 			$('#tab').css({
 				background : '#54CDF3',
+				'border-collapse':'collapse'
 			})
 			$('td').css({
 				width : '80px',
 				height : '25px',
 				color : 'red',
 			    border : '1px solid black',
-				margin : '0 auto'
+				margin : '0 auto',
+				"text-align":'center'
 			})
 		})
 	</script>
 	<hr />
-	<table id='tab' border='1' align='center' cellspacing='0'
-		cellpadding='5'>
-	</table>
 
+<table id='tab' border='1' align='center' 
+		cellpadding='0'>
+	</table>
 </body>
 </html>
