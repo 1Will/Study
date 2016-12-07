@@ -1,7 +1,36 @@
 /**
  * 
  */
-/*主页动画*/
+/*Index动画*/
+$('#load').bind('click', function() {
+	$('#h4h').show("slow");
+})
+
+$(function() {
+		$('body').bind('mouseover', function() {
+			for (var a = 1; a <= 10; a++) {
+				$('#divv').animate({
+					top : '88%',
+					left : '40%',
+				}, 3000);
+				$('#divv').animate({
+					top : '40%',
+					left : '79%',
+				}, 3000);
+				$('#divv').animate({
+					top : '1%',
+					left : '40%',
+				}, 3000);
+				$('#divv').animate({
+					top : '40%',
+					left : '1%',
+				}, 3000);
+			}
+		});
+
+	})
+
+/*Index2动画*/
 $('#li1').bind('mouseover', function() {
 	$('#ad2').hide();
 	$('#ad3').hide();

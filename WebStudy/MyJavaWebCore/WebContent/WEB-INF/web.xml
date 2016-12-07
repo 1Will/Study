@@ -9,4 +9,17 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+   <servlet>  
+    <servlet-name>default</servlet-name>  
+    <!--把org.mortbay.jetty.servlet.DefaultServlet改成org.eclipse.jetty.servlet.DefaultServlet即可-->  
+    <servlet-class>org.eclipse.jetty.servlet.DefaultServlet</servlet-class>  
+    <init-param>  
+      <param-name>useFileMappedBuffer</param-name>  
+      <!-- 设置为false解决jetty容器启动时不能修改静态文件的问题. -->  
+      <param-value>false</param-value>  
+    </init-param>    
+</servlet>  
+  
+  
 </web-app>
