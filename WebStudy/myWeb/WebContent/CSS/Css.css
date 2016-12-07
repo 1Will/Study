@@ -2,12 +2,12 @@
 /* Index样式 */
 #divv{
 	border: 1px solid #D4CD49;
-	border-radius:30px;
-	background:#9BD9FD; 
+	border-radius:35px;
+	background: rgba(155, 217, 253, 0.7) ;
 	position: fixed; 
 	height: 40px;
 	width: 20%; 
-	height: 80px; 
+	height: 70px; 
 	left: 1%; 
 	top: 40%;
 }
@@ -15,7 +15,7 @@
 #div1{
 	border-radius:10px;
 	border: 3px solid #DADDE2;
-	margin-top: 20%;
+	margin-top: 15%;
 	margin-left:35%;
 	width:28%; 
 	min-height:200px;
@@ -106,4 +106,11 @@ li {
 }
 span{font-family:微软雅黑;}
 a{font-family:微软雅黑;}
+
+#h3h{
+	color:red;
+	font-weight:bold;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
 

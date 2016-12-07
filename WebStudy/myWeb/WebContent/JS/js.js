@@ -3,7 +3,8 @@
  */
 /*Index动画*/
 $('#load').bind('click', function() {
-	$('#h4h').show("slow");
+	/*$('#h4h').show("slow");*/
+	$('#h4h1:style').val("display","inline");
 })
 
 $(function() {

@@ -12,7 +12,7 @@
 <%
 if(session.getAttribute("user")!=null){
 %>
-<h3>欢迎<%=session.getAttribute("user") %>进入系统！<a href="logout.jsp">注销</a>！</h3>
+<p id="h3h">欢迎<%=session.getAttribute("user") %>进入系统！点击此处<a href="logout.jsp">退出</a></p>
 
 <!-- <span>实用链接：</span>
 <span>&nbsp;</span><a href="http://www.google.cn/">谷歌</a>

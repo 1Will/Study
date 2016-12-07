@@ -8,7 +8,7 @@
 </head>
 <body>
 <%
-response.setHeader("refresh","2;URL=Index2.jsp");
+response.setHeader("refresh","2;URL=../Index.jsp");
 session.invalidate();
 %>
 <h3>您已成功退出系统，两秒后跳转到首页</h3>
