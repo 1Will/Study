@@ -9,10 +9,14 @@
 <script type="text/javascript" src="../JS/jquery.min.js"></script>
 </head>
 <body class="body1">
-<span>实用链接：</span>
+<%
+if(session.getAttribute("user")!=null){
+%>
+<h3>欢迎<%=session.getAttribute("user") %>进入系统！<a href="logout.jsp">注销</a>！</h3>
+
+<!-- <span>实用链接：</span>
 <span>&nbsp;</span><a href="http://www.google.cn/">谷歌</a>
-<span>&nbsp;</span><a href="http://www.baidu.com">百度</a>
-<p>欢迎  <%=session.getAttribute("user")%> 登录！</P>
+<span>&nbsp;</span><a href="http://www.baidu.com">百度</a> -->
 	<div id="top" class="aa"></div>
 	<h1 align="center">个人网站</h1>
 	<div id="navbar">
@@ -41,7 +45,13 @@
 
 	
 	<div></div>
-
+<%
+}else{
+%>
+<h3>请先进行系统的<a href="../Index.jsp">登录</a>！</h3>
+<%
+}
+%>
 <script type="text/javascript" src="../JS/js.js"></script>
 </body>
 </html>

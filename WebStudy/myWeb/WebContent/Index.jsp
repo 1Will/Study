@@ -43,15 +43,13 @@
 	<%
 		} else {
 	%>
-	<h4>错误的用户名或密码！</h4>
+	<h4 id="h4h">错误的用户名或密码！</h4>
+	
 	<%
 		}
-		} else {
+		}
 	%>
 
-	<%
-		}
-	%>
 	<script type="text/javascript" src="JS/js.js"></script>
 </body>
 </html>
