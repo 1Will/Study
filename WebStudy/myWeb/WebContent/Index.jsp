@@ -16,20 +16,29 @@
 	
 	<!-- 登陆框 -->
 	<div id="div1">
+	
+	<div id="div4">
+	<div id="div2">
 		<form id="form1"  method="post"><!-- action="Index.jsp" -->
 			<span>用户名:</span> <input name="name" type="text" title="请输入用户名"><br />
 			<br /> <span>密&nbsp;&nbsp;&nbsp;码:</span> <input name="password"
-				type="password" title="请输入密码"><br />
+				type="password" title="请输入密码"><br/>
 			<p>
 				<input id="load" class="button" type="submit"
-					value="&nbsp;&nbsp;&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;&nbsp;&nbsp;">
+					value="登录">
 			</p>
 			<p>
 				<input class="button" type="reset"
-					value="&nbsp;&nbsp;&nbsp;重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置&nbsp;&nbsp;&nbsp;">
+					value="取消">
 			</p>
 		</form>
-		<h4 id="h4h1" style="display: none;" dir="ltr" align="center">请输入用户名和密码!</h4><!-- 此处需调试 -->
+	</div>
+	</div>
+	
+	<div id="div3">
+	<p>请输入用户名和密码！</p>
+	</div>
+	
 	</div>
 <!-- 验证部分 -->
 	<%

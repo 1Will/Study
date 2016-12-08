@@ -1,16 +1,16 @@
 package Book;
 
 public class BookBean {
-	private String BookName="";
+	private String bookName="";
 	private int BookNum=1;
 	public BookBean(){
 		
 	}
 	public String getBookName() {
-		return BookName;
+		return bookName;
 	}
-	public void setBookName(String bookName) {
-		BookName = bookName;
+	public void setBookName(String bookname) {
+		bookName = bookname;
 	}
 	public int getBookNum() {
 		return BookNum;
