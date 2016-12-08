@@ -101,7 +101,7 @@ float:inherit;
 .body1{
 	background-image:url(../Images/bg.jpg);
 	background-repeat: repeat;
-	background-size:100%;
+	background-size:100%;+
 }
 #navbar{float:inherit}
 #left{ float:left; width:25%; height:100%;background:white}
