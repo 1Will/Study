@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>我的主页</title>
 <link href="../CSS/Css.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="../JS/jquery.min.js"></script>
@@ -16,10 +16,10 @@
 		欢迎<%=session.getAttribute("user")%>进入系统！点击此处<a href="logout.jsp">退出</a>
 	</p>
 
-	<div id="top" class="aa"></div>
-	
-	<h1 align="center">个人网站</h1>
-	
+	<!-- <div id="top" class="aa"></div> -->
+
+	<h2 align="center">个人网站</h2>
+
 	<div id="navbar">
 
 		<div id="left">
@@ -39,10 +39,29 @@
 		</div>
 
 		<div id="right">
-			<div id="ad1" style="display: none;">这个是自我介绍</div>
-			<div id="ad2" style="display: none;">这个是学习内容</div>
-			<div id="ad3" style="display: none;">这个是项目经验</div>
-			<div id="ad4" style="display: none;">这个是作品展示</div>
+			<div id="ad1" style="display: none;">
+			<p>这个是自我介绍</p>
+			<p>打开链接有惊喜哦！</p>
+			<p>打开链接有惊喜哦！</p>
+			</div>
+			<div id="ad2" style="display: none;">
+			<p>这个是学习内容</p>
+			<p>打开链接有惊喜哦！</p>
+			<p>打开链接有惊喜哦！</p>
+			
+			</div>
+			<div id="ad3" style="display: none;">
+			<p>这个是项目经验</p>
+			<p>打开链接有惊喜哦！</p>
+			<p>打开链接有惊喜哦！</p>
+			
+			</div>
+			<div id="ad4" style="display: none;">
+			<p>这个是作品展示</p>
+			<p>打开链接有惊喜哦！</p>
+			<p>打开链接有惊喜哦！</p>
+			
+			</div>
 		</div>
 
 	</div>

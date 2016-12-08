@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>登录页面</title>
 <script type="text/javascript" src="JS/jquery.min.js"></script>
 <link href="CSS/Css.css" type="text/css" rel="stylesheet">
 </head>
@@ -20,8 +20,8 @@
 	<div id="div4">
 	<div id="div2">
 		<form id="form1"  method="post"><!-- action="Index.jsp" -->
-			<span>用户名:</span> <input name="name" type="text" title="请输入用户名"><br />
-			<br /> <span>密&nbsp;&nbsp;&nbsp;码:</span> <input name="password"
+			<span>用户名:</span> <input id="name" name="name" type="text" title="请输入用户名"><br />
+			<br /> <span>密&nbsp;&nbsp;&nbsp;码:</span> <input id="password" name="password"
 				type="password" title="请输入密码"><br/>
 			<p>
 				<input id="load" class="button" type="submit"
@@ -33,13 +33,7 @@
 			</p>
 		</form>
 	</div>
-	</div>
 	
-	<div id="div3">
-	<p>请输入用户名和密码！</p>
-	</div>
-	
-	</div>
 <!-- 验证部分 -->
 	<%
 		String nm = request.getParameter("name");
@@ -53,10 +47,18 @@
 		} else {
 	%>
 	<h4 id="h4h">错误的用户名或密码！</h4>
+	</div>
+	
+	<div id="div5">
+	<div id="div3">
+	<p>请输入用户名和密码！游客用户名:abc,密码123</p>
+	</div>
+	</div>
+	</div>
 	
 	<%
 		}
-		}
+	}
 	%>
 
 	<script type="text/javascript" src="JS/js.js"></script>

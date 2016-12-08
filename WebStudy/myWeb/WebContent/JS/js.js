@@ -2,9 +2,21 @@
  * 
  */
 /*Index动画*/
-$('#load').bind('click', function() {
-	/*$('#h4h').show("slow");*/
-	$('#h4h1:style').val("display","inline");
+$('#name').bind('mouseover', function() {
+	$('#div3').show();
+})
+$('#name').bind('mouseout', function() {
+	$('#div3').hide();
+})
+$('#password').bind('mouseover', function() {
+	$('#div3').show();
+})
+$('#password').bind('mouseout', function() {
+	$('#div3').hide();
+})
+
+$('#password').bind('click', function() {
+	$('#password').val('');
 })
 
 $(function() {
@@ -36,25 +48,25 @@ $('#li1').bind('mouseover', function() {
 	$('#ad2').hide();
 	$('#ad3').hide();
 	$('#ad4').hide();
-	$('#ad1').show('fast');
+	$('#ad1').show();
 })
 $('#li2').bind('mouseover', function() {
 	$('#ad1').hide();
 	$('#ad3').hide();
 	$('#ad4').hide();
-	$('#ad2').show('fast');
+	$('#ad2').show();
 })
 $('#li3').bind('mouseover', function() {
 	$('#ad1').hide();
 	$('#ad2').hide();
 	$('#ad4').hide();
-	$('#ad3').show('fast');
+	$('#ad3').show();
 })
 $('#li4').bind('mouseover', function() {
 	$('#ad1').hide();
 	$('#ad2').hide();
 	$('#ad3').hide();
-	$('#ad4').show('fast');
+	$('#ad4').show();
 })
 $('#left').bind('mouseout', function() {
 	$('#ad1').hide();
