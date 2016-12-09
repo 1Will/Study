@@ -26,13 +26,13 @@
 			<p class="p1">导航栏</p>
 
 			<ul class="ul1">
-				<li><a href="myIntroduction.html"><img id="li1"
+				<li><a href="../HTML/myIntroduction.html"><img id="li1"
 						src="../Images/1.jpg" /></a></li>
-				<li id="li2"><a href="study.html"><img id="li2"
+				<li id="li2"><a href="../HTML/study.html"><img id="li2"
 						src="../Images/2.jpg" /></a></li>
-				<li id="li3"><a href="exercise.html"><img id="li3"
+				<li id="li3"><a href="../HTML/exercise.html"><img id="li3"
 						src="../Images/3.jpg" /></a></li>
-				<li id="li4"><a href="works.html"><img id="li4"
+				<li id="li4"><a href="../HTML/works.html"><img id="li4"
 						src="../Images/4.jpg" /></a></li>
 			</ul>
 
