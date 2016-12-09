@@ -9,32 +9,40 @@
 <link href="CSS/Css.css" type="text/css" rel="stylesheet">
 </head>
 <body class="body2">
-<!-- 首页动画 -->
+	<!-- 首页动画 -->
 	<div id="divv">
 		<h2 id="h2h">欢迎登录！</h2>
 	</div>
-	
+
 	<!-- 登陆框 -->
-	<div id="div1">
-	
-	<div id="div4">
-	<div id="div2">
-		<form id="form1"  method="post"><!-- action="Index.jsp" -->
-			<span>用户名:</span> <input id="name" name="name" type="text" title="请输入用户名"><br />
-			<br /> <span>密&nbsp;&nbsp;&nbsp;码:</span> <input id="password" name="password"
-				type="password" title="请输入密码"><br/>
-			<p>
-				<input id="load" class="button" type="submit"
-					value="登录">
-			</p>
-			<p>
-				<input class="button" type="reset"
-					value="取消">
-			</p>
-		</form>
+	<div id="body">
+
+		<div id="left1">
+			<div id="div2">
+				<form id="form1" method="post">
+					<!-- action="Index.jsp" -->
+					<span>用户名:</span> <input id="name" name="name" type="text"
+						title="请输入用户名"><br /> <br /> <span>密&nbsp;&nbsp;&nbsp;码:</span>
+					<input id="password" name="password" type="password" title="请输入密码"><br />
+					<p>
+						<input id="load" class="button" type="submit" value="登录">
+					</p>
+					<p>
+						<input class="button" type="reset" value="取消">
+					</p>
+				</form>
+			</div>
+		</div>
+
+		<div id="right1">
+			<div id="div1">
+				<p>请输入用户名和密码！游客用户名:abc,密码123</p>
+			</div>
+		</div>
+
 	</div>
-	
-<!-- 验证部分 -->
+
+	<!-- 验证部分 -->
 	<%
 		String nm = request.getParameter("name");
 		String pw = request.getParameter("password");
@@ -46,21 +54,14 @@
 	<%
 		} else {
 	%>
-	<h4 id="h4h">错误的用户名或密码！</h4>
+	<div id="foot1">
+		<h4 id="h4h">错误的用户名或密码！</h4>
 	</div>
-	
-	<div id="div5">
-	<div id="div3">
-	<p>请输入用户名和密码！游客用户名:abc,密码123</p>
-	</div>
-	</div>
-	</div>
-	
+
 	<%
 		}
-	}
+		}
 	%>
-
 	<script type="text/javascript" src="JS/js.js"></script>
 </body>
 </html>

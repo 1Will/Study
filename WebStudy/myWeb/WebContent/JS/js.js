@@ -3,16 +3,16 @@
  */
 /*Index动画*/
 $('#name').bind('mouseover', function() {
-	$('#div3').show();
+	$('#div1').show();
 })
 $('#name').bind('mouseout', function() {
-	$('#div3').hide();
+	$('#div1').hide();
 })
 $('#password').bind('mouseover', function() {
-	$('#div3').show();
+	$('#div1').show();
 })
 $('#password').bind('mouseout', function() {
-	$('#div3').hide();
+	$('#div1').hide();
 })
 
 $('#password').bind('click', function() {
@@ -28,7 +28,7 @@ $(function() {
 				}, 3000);
 				$('#divv').animate({
 					top : '40%',
-					left : '79%',
+					left : '81%',
 				}, 3000);
 				$('#divv').animate({
 					top : '1%',
