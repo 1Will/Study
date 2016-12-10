@@ -1,0 +1,151 @@
+@CHARSET "UTF-8";
+
+a{
+	font-family: 微软雅黑;
+	text-decoration:none;
+	font-size: 15px;
+}
+
+/*学习内容  */
+* {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+body {
+	margin: 0px auto;
+}
+
+#container {
+	width: 90%;
+	height: 780px;
+	margin: 0px auto;
+}
+
+#banner {
+	width: 100%;
+	height: 8%;
+	border: 1px solid #6D7E6D;
+	border-radius: 30px;
+	background: rgba(175, 236, 255, 0.3);
+	margin-top: 2px;
+	text-align: center;
+}
+
+#body {
+	width: 100%;
+	height: 100%;
+}
+
+#left {
+	width: 12%;
+	height: 90%;
+	float: left;
+	text-align: center;
+	border: 1px solid #6D7E6D;
+	border-radius: 30px;
+}
+
+#middle {
+	width: 80%;
+	height: 90%;
+	float: left;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-image: url("../Images/JavaStudy.png");
+}
+
+right {
+	width: 5%;
+	height: 90%;
+	float: left;
+	background-color: pink;
+}
+
+#foot {
+	width: 100%;
+}
+
+.sp1 {
+	font-family: 微软雅黑;
+	font-size: 35px;
+	text-align: center;
+	vertical-align: center;
+}
+
+ul {
+	float: center;
+	font-family: 微软雅黑;
+	font-size: 20px;
+	font-style: italic;
+	color: #6D716C;
+	margin-top: 50%;
+}
+
+li {
+	list-style-type: none;
+	margin-top: 30px;
+}
+
+/*自我介绍  */
+h1 {
+	text-align: center;
+	color: black;
+	font-size: 35px;
+	font-family: 楷体;
+	color: black;
+}
+
+h4 {
+	text-indent: 0%;
+	font-family: 微软雅黑;
+	margin-left: 4%;
+	margin-bottom: 8px;
+	margin-top: 8px;
+}
+
+#bd2 {
+	margin-left: 25%;
+	margin-right: 25%;
+	width: 750px;
+	height: 1000px;
+	border: 3px solid #444444;
+}
+
+table{
+	border-collapse:collapse;
+	border-radius: 100px;
+	width: 700px;
+	border: 1px solid #444444;
+	margin-left: 3%;
+}
+
+#tb1 {
+	height: 18%;
+}
+
+#tb2 {
+	height: 13%;
+}
+
+#tb3 {
+	height: 20%;
+	text-align: center;
+}
+
+#tb4 {
+	height: 15%;
+}
+textarea{
+	border: 1px solid #444444;
+}
+input{
+	border: 1px solid #444444;
+}
+td{
+	border: 2px solid #444444;
+	text-align: center;
+	font-size: 18px;
+	font-family:华文细黑;
+}

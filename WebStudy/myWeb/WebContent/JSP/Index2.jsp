@@ -16,8 +16,6 @@
 		欢迎<%=session.getAttribute("user")%>进入系统！点击此处<a href="logout.jsp">退出</a>
 	</p>
 
-	<!-- <div id="top" class="aa"></div> -->
-
 	<h2 align="center">个人网站</h2>
 
 	<div id="navbar">

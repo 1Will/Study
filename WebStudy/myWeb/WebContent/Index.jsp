@@ -48,7 +48,7 @@
 		String pw = request.getParameter("password");
 		if (!(nm == null || "".equals(nm) || pw == null || "".equals(pw))) {
 			if ("abc".equals(nm) && "123".equals(pw)) {
-				response.setHeader("refresh", "0.1;URL=JSP/Index2.jsp");
+				response.setHeader("refresh", "0;URL=JSP/Index2.jsp");
 				session.setAttribute("user", nm);
 	%>
 	<%
