@@ -48,29 +48,47 @@ $('#li1').bind('mouseover', function() {
 	$('#ad2').hide();
 	$('#ad3').hide();
 	$('#ad4').hide();
+	$('#ad5').hide();
 	$('#ad1').show();
 })
 $('#li2').bind('mouseover', function() {
 	$('#ad1').hide();
 	$('#ad3').hide();
 	$('#ad4').hide();
+	$('#ad5').hide();
 	$('#ad2').show();
 })
 $('#li3').bind('mouseover', function() {
 	$('#ad1').hide();
 	$('#ad2').hide();
 	$('#ad4').hide();
+	$('#ad5').hide();
 	$('#ad3').show();
 })
 $('#li4').bind('mouseover', function() {
 	$('#ad1').hide();
 	$('#ad2').hide();
 	$('#ad3').hide();
+	$('#ad5').hide();
 	$('#ad4').show();
 })
+$('#li5').bind('mouseover', function() {
+	$('#ad1').hide();
+	$('#ad2').hide();
+	$('#ad3').hide();
+	$('#ad4').hide();
+	$('#ad5').show();
+})
+
 $('#left').bind('mouseout', function() {
 	$('#ad1').hide();
 	$('#ad2').hide();
 	$('#ad3').hide();
 	$('#ad4').hide();
+	$('#ad5').hide();
+})
+
+
+$('#game1').bind('click',function(){
+	$('#iframe1').attr("src","game/game1.html");
 })

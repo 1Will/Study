@@ -32,6 +32,8 @@
 						src="../Images/3.jpg" /></a></li>
 				<li id="li4"><a href="../HTML/works.html"><img id="li4"
 						src="../Images/4.jpg" /></a></li>
+				<li id="li5"><a href="../HTML/game.html"><img id="li5"
+						src="../Images/5.jpg" /></a></li>
 			</ul>
 
 		</div>
@@ -58,6 +60,13 @@
 			<p>这个是作品展示</p>
 			<p>打开链接有惊喜哦！</p>
 			<p>打开链接有惊喜哦！</p>
+			</div>
+			
+			<div id="ad5" style="display: none;">
+			<p>游戏！</p>
+			<p>打开链接有惊喜哦！</p>
+			<p>打开链接有惊喜哦！</p>
+			</div>
 			
 			</div>
 		</div>

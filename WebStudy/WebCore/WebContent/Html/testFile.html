@@ -7,16 +7,17 @@
 </head>
 <body>
 
-<div id="wp" class="warpper">            
-        单击选择要上传的照片
-        <input id="uploadFile" type="file" name="myPhoto">        
-        <button id="btnConfirm" class="btn">确认上传</button>        
- 
-<div id="maskLayer" class="mask-layer" style="display:none;">
-    <p>图片正在上传中...</p>
-</div></div>
-<form>
-<input type="file" id="upload" onChange="showImage()"/>
-</form>
+	<div id="wp" class="warpper">
+		单击选择要上传的照片 <input id="uploadFile" type="file" name="myPhoto">
+		<button id="btnConfirm" class="btn">确认上传</button>
+
+		<div id="maskLayer" class="mask-layer" style="display: none;">
+			<p>图片正在上传中...</p>
+		</div>
+	</div>
+	<form>
+		<input type="file" id="upload" onChange="showImage()" />
+	</form>
+
 </body>
 </html>
