@@ -88,7 +88,10 @@ $('#left').bind('mouseout', function() {
 	$('#ad5').hide();
 })
 
-
+/* 休闲一下 */
 $('#game1').bind('click',function(){
 	$('#iframe1').attr("src","game/game1.html");
+})
+$('#game2').bind('click',function(){
+	$('#iframe1').attr("src","game2/snack.html");
 })
