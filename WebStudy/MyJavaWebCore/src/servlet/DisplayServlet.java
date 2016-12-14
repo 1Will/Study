@@ -3,26 +3,28 @@ package servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class TJservlet
+ * Servlet implementation class DisplayServlet
  */
-/*@WebServlet(urlPatterns = { "/Tservlet" } , loadOnStartup = 1)*/
-
-
-public class Tservlet extends HttpServlet {
+@WebServlet("/servlet/DisplayServlet")
+public class DisplayServlet extends HttpServlet {
+	/*public static String fromRequest="fromRequest";
+	public static String fromSession="fromSession";
+	public static String fromContext="fromContext";*/
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Tservlet() {
+    public DisplayServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,31 +33,22 @@ public class Tservlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out =response.getWriter();
-		out.println("<HTML>");
-		out.println("<HEAD><title>servlet测试get/post</title></HEAD>");
-		out.println("<BODY>");
-		out.println("<H2>调用doGet()方法</H2>");
-		out.println("<H2>用户输入信息如下</H2>");
-		request.setCharacterEncoding("UTF-8");
-		String username =request.getParameter("username");
-		//username= new String(username.getBytes("ISO8859_1"),"UTF-8");
-		ServletConfig config =getServletConfig();
-		String abc = config.getInitParameter("abc");
+		String str1=(String)request.getAttribute("fromRequest");
+		HttpSession session =request.getSession();
+		String str2=(String)session.getAttribute("fromSession");
+		ServletContext context =getServletConfig().getServletContext();
+		String str3=(String)context.getAttribute("fromContext");
 		
-		if(username==null||username==""){
-			username="未输入";
-		}
-		String passwd=request.getParameter("passwd");
-		if(passwd==null||passwd==""){
-			passwd="未输入密码";
-		}
-		out.println("<H2>用户名："+username+"<H2>");
-		out.println("<H2>密码："+passwd+"<H2>");
-		out.println("<H2>abc="+abc+"<H2>");
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out=response.getWriter();
+		out.println("<HTML>");
+		out.println("<HEAD><TITLE>输出范围属性有关信息</TITLE></HEAD>");
+		out.println("<BODY>");
+		out.println("<H3>request的值："+str1+"</H3>");
+		out.println("<H3>session的值："+str2+"</H3>");
+		out.println("<H3>application的值："+str3+"</H3>");
 		out.println("</BODY>");
-		out.println("</HTMl>");
+		out.println("</HTML>");
 		out.close();
 	}
 
@@ -63,6 +56,7 @@ public class Tservlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

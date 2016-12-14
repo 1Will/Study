@@ -9,19 +9,6 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  
-<servlet>
-    <servlet-name>default</servlet-name>
-    <servlet-class>org.eclipse.jetty.servlet.DefaultServlet</servlet-class>
-    <init-param>
-      <param-name>useFileMappedBuffer</param-name>
-      <param-value>false</param-value>
-    </init-param>
-     <load-on-startup>0</load-on-startup> 
-  </servlet>
-  
-  
   <servlet>
     <servlet-name>Tservlet</servlet-name>
     <servlet-class>servlet.Tservlet</servlet-class>
@@ -32,6 +19,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Tservlet</servlet-name>
-    <url-pattern>/servlet/Tservlet</url-pattern>
+    <url-pattern>/Tservlet</url-pattern>
   </servlet-mapping>
 </web-app>

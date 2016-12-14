@@ -19,7 +19,7 @@
 
 		<div id="left1">
 			<div id="div2">
-				<form id="form1" method="post" action="/servlet/Submit">
+				<form id="form1" method="post">
 					<!-- action="Index.jsp" -->
 					<span>用户名:</span> <input id="name" name="name" type="text"
 						title="请输入用户名"><br /> <br /> <span>密&nbsp;&nbsp;&nbsp;码:</span>
@@ -42,7 +42,7 @@
 
 	</div>
 
-<%-- 	<!-- 验证部分 -->
+	<!-- 验证部分 -->
 	<%
 		String nm = request.getParameter("name");
 		String pw = request.getParameter("password");
@@ -61,7 +61,7 @@
 	<%
 		}
 		}
-	%> --%>
+	%>
 	<script type="text/javascript" src="JS/js.js"></script>
 </body>
 </html>
