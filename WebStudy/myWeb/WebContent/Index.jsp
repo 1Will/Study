@@ -19,7 +19,7 @@
 
 		<div id="left1">
 			<div id="div2">
-				<form id="form1" method="post" action="/servlet/Submit">
+				<form id="form1" method="post" action="servlet\Submit">
 					<!-- action="Index.jsp" -->
 					<span>用户名:</span> <input id="name" name="name" type="text"
 						title="请输入用户名"><br /> <br /> <span>密&nbsp;&nbsp;&nbsp;码:</span>
