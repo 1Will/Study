@@ -1,4 +1,7 @@
 /bin
 
-*class
-*classpath
+*.class
+*.classpath
+*.eml
+*.iml
+.idea
