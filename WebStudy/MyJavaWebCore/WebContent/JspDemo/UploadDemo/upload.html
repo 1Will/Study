@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>上传</title>
+</head>
+<style>
+<!--
+#file { 
+position:relative; 
+width:226px; 
+height:25px; 
+border:1px #99f solid; 
+} 
+#file input { 
+font-size:16px; 
+margin:0; 
+padding:0; 
+position:relative; 
+vertical-align:middle; 
+outline:none; 
+} 
+#file input[type="text"] { 
+border:3px none; 
+width:172px; 
+z-index:4; 
+} 
+#file input[type="button"] { 
+width:54px; 
+height:25px; 
+z-index:2; 
+} 
+#file input[type="file"] { 
+position:absolute; 
+right:0px; 
+height:25px; 
+opacity:0; 
+z-index:3; 
+} 
+
+-->
+</style>
+<script type="text/javascript">
+window.onload=function(){ 
+	var file=document.querySelector("#file input[type='file']"); 
+	var text=document.querySelector("#file input[type='text']"); 
+	file.addEventListener("change",assign,false); 
+	function assign(){ 
+	text.value=file.value; 
+	} 
+	} 
+</script>
+<body>
+
+<form action="upload.jsp" method="post" enctype="multipart/form-data">
+<!-- <span>姓名:</span><br>
+<input type="text" name="uname"><br><br> -->
+<span>照片:</span>
+
+<div id="file"> 
+<input type="text" value="未选择文件" /><input type="button" value="浏览" /><input type="file" name="pic"/> 
+</div> 
+
+<input type="submit" name="sm" value="提交">
+<input type="reset" name="rs" value="重置">
+</form>
+</body>
+</html>

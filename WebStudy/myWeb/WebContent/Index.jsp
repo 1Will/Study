@@ -13,7 +13,6 @@
 	<div id="divv">
 		<h2 id="h2h">欢迎登录！</h2>
 	</div>
-
 	<!-- 登陆框 -->
 	<div id="body">
 
@@ -33,35 +32,12 @@
 				</form>
 			</div>
 		</div>
-
 		<div id="right1">
 			<div id="div1">
-				<p>请输入用户名和密码！游客用户名:abc,密码123</p>
+				<p>请输入用户名和密码！访客用户名: abc 密码: 123</p>
 			</div>
 		</div>
-
 	</div>
-
-<%-- 	<!-- 验证部分 -->
-	<%
-		String nm = request.getParameter("name");
-		String pw = request.getParameter("password");
-		if (!(nm == null || "".equals(nm) || pw == null || "".equals(pw))) {
-			if ("abc".equals(nm) && "123".equals(pw)) {
-				response.setHeader("refresh", "0;URL=JSP/Index2.jsp");
-				session.setAttribute("user", nm);
-	%>
-	<%
-		} else {
-	%>
-	<div id="foot1">
-		<h4 id="h4h">错误的用户名或密码！</h4>
-	</div>
-
-	<%
-		}
-		}
-	%> --%>
 	<script type="text/javascript" src="JS/js.js"></script>
 </body>
 </html>

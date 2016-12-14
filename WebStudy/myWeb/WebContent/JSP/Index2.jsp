@@ -10,10 +10,10 @@
 </head>
 <body class="body1">
 	<%
-		if (session.getAttribute("user") != null) {
+		if (request.getAttribute("user") != null) {
 	%>
 	<p id="h3h">
-		欢迎<%=session.getAttribute("user")%>进入系统！点击此处<a href="logout.jsp">退出</a>
+		欢迎<%=request.getAttribute("user")%>进入系统！点击此处<a href="../JSP/logout.jsp">退出</a>
 	</p>
 
 	<h2 align="center">个人网站</h2>
