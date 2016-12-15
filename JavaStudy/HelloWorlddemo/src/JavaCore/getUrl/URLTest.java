@@ -148,7 +148,7 @@ public class URLTest {
 
 	public static void main(String args[]) throws IOException {
 		String url[] = http();
-		writeFile("<html><body><table border=\"1\">");
+		writeFile("<html><body><table border='1' align='center' cellspacing='0'>");
 		writeFile("<tr><td>Name</td><td>Last Price</td><td>Last Time</td><td>Settl. Price</td><td>Vol.</td></tr>");
 		int status = 404;
 		for (int i = 0; i < url.length; i++) {
