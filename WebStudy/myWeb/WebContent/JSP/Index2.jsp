@@ -7,14 +7,18 @@
 <title>我的主页</title>
 <link href="../CSS/Css.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="../JS/jquery.min.js"></script>
+<script>setInterval("time.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+</script>
 </head>
 <body class="body1">
 	<%
 		if (request.getAttribute("user") != null) {
 	%>
 	<p id="h3h">
-		欢迎<%=request.getAttribute("user")%>进入系统！点击此处<a href="../JSP/logout.jsp">退出</a>
+		点击此处<a href="../JSP/logout.jsp">退出</a>
 	</p>
+	<div id="time"></div>
+	<marquee>欢迎<%=request.getAttribute("user")%>进入系统！</marquee>
 
 	<h2 align="center">个人网站</h2>
 
@@ -72,7 +76,6 @@
 		</div>
 
 	</div>
-
 
 	<div></div>
 	<%

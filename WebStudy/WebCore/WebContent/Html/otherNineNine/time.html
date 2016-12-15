@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	今天是
+	<script language="javascript">
+           var mydate=new Date();
+           var mymonth=mydate.getMonth()+1;
+           var myday= mydate.getDate();
+           var myyear= mydate.getYear();
+           document.write(myyear+"-"+mymonth+"-"+myday);</script>
+	，欢迎访问XX网
+
+	<div id="jnkc"></div>
+
+	<script>setInterval("jnkc.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+
+</script>
+</body>
+</html>
