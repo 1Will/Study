@@ -18,8 +18,10 @@
 		点击此处<a href="../JSP/logout.jsp">退出</a>
 	</p>
 	<div id="time"></div>
-	<marquee>欢迎<%=request.getAttribute("user")%>进入系统！</marquee>
-
+	<marquee>
+		欢迎<%=request.getAttribute("user")%>进入系统！
+	</marquee>
+	<hr>
 	<h2 align="center">个人网站</h2>
 
 	<div id="navbar">
@@ -44,40 +46,40 @@
 
 		<div id="right">
 			<div id="ad1" style="display: none;">
-			<p>这个是自我介绍</p>
-			<p>打开链接有惊喜哦！</p>
-			<p>打开链接有惊喜哦！</p>
+				<p>这个是自我介绍</p>
+				<p>打开链接有惊喜哦！</p>
+				<p>打开链接有惊喜哦！</p>
 			</div>
 			<div id="ad2" style="display: none;">
-			<p>这个是学习内容</p>
-			<p>打开链接有惊喜哦！</p>
-			<p>打开链接有惊喜哦！</p>
-			
+				<p>这个是学习内容</p>
+				<p>打开链接有惊喜哦！</p>
+				<p>打开链接有惊喜哦！</p>
+
 			</div>
 			<div id="ad3" style="display: none;">
-			<p>这个是项目经验</p>
-			<p>打开链接有惊喜哦！</p>
-			<p>打开链接有惊喜哦！</p>
-			
+				<p>这个是项目经验</p>
+				<p>打开链接有惊喜哦！</p>
+				<p>打开链接有惊喜哦！</p>
+
 			</div>
 			<div id="ad4" style="display: none;">
-			<p>这个是作品展示</p>
-			<p>打开链接有惊喜哦！</p>
-			<p>打开链接有惊喜哦！</p>
+				<p>这个是作品展示</p>
+				<p>打开链接有惊喜哦！</p>
+				<p>打开链接有惊喜哦！</p>
 			</div>
-			
-			<div id="ad5" style="display: none;">
-			<p>游戏！</p>
-			<p>打开链接有惊喜哦！</p>
-			<p>打开链接有惊喜哦！</p>
-			</div>
-			
-			</div>
-		</div>
 
+			<div id="ad5" style="display: none;">
+				<p>游戏！</p>
+				<p>打开链接有惊喜哦！</p>
+				<p>打开链接有惊喜哦！</p>
+			</div>
+
+		</div>
+		
+		<div></div>
+		
 	</div>
 
-	<div></div>
 	<%
 		} else {
 	%>
