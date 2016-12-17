@@ -11,27 +11,27 @@
 </script>
 </head>
 <body class="body1">
-	<%
-		if (request.getAttribute("user") != null) {
+	<%-- <%
+		if (session.getAttribute("user") != null) {
 	%>
 	<p id="h3h">
 		点击此处<a href="../JSP/logout.jsp">退出</a>
-	</p>
+	</p> --%>
 	<div id="time"></div>
 	<marquee>
-		欢迎<%=request.getAttribute("user")%>进入系统！
+		欢迎<%=session.getAttribute("user")%>进入系统！
 	</marquee>
 	<hr>
-	<h2 align="center">个人网站</h2>
+	<h2 id="title">个人网站</h2>
 
 	<div id="navbar">
 
 		<div id="left">
-			<p class="p1">导航栏</p>
 
 			<ul class="ul1">
-				<li><a href="../HTML/myIntroduction.html"><img id="li1"
-						src="../Images/1.jpg" /></a></li>
+				<li><div ><p class="nav">导航栏</p></div></li>
+				<!-- <li><a href="../HTML/myIntroduction.html"><img id="li1"
+						src="../Images/1.jpg" /></a></li> 
 				<li id="li2"><a href="../HTML/study.html"><img id="li2"
 						src="../Images/2.jpg" /></a></li>
 				<li id="li3"><a href="../HTML/exercise.html"><img id="li3"
@@ -39,7 +39,12 @@
 				<li id="li4"><a href="../HTML/works.html"><img id="li4"
 						src="../Images/4.jpg" /></a></li>
 				<li id="li5"><a href="../HTML/game.html"><img id="li5"
-						src="../Images/5.jpg" /></a></li>
+						src="../Images/5.jpg" /></a></li>-->
+				<li><div id="li1" class="nav"><a href="../HTML/myIntroduction.html">自我介绍</a></div></li>
+				<li><div id="li2" class="nav"><a href="../HTML/study.html">学习内容</a></div></li>
+				<li><div id="li3" class="nav"><a href="../HTML/exercise.html">项目经验</a></div></li>
+				<li><div id="li4" class="nav"><a href="../HTML/works.html">作品展示</a></div></li>
+				<li><div id="li5" class="nav"><a href="../HTML/game.html"">休闲一下</a></div></li>
 			</ul>
 
 		</div>
@@ -80,15 +85,15 @@
 		
 	</div>
 
-	<%
+	<%-- <%
 		} else {
 	%>
 	<h3>
 		请先进行系统的<a href="../Index.jsp">登录</a>！
-	</h3>
+	</h3> 
 	<%
 		}
-	%>
+	%>--%>
 	<script type="text/javascript" src="../JS/js.js"></script>
 </body>
 </html>
