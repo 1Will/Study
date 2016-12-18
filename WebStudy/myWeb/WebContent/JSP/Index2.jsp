@@ -13,10 +13,10 @@
 <body class="body1">
 	<%-- <%
 		if (session.getAttribute("user") != null) {
-	%>
-	<p id="h3h">
-		点击此处<a href="../JSP/logout.jsp">退出</a>
-	</p> --%>
+	%> --%>
+	<p id="h3h" >
+		点击此处--><a id="logout" href="../JSP/logout.jsp">退出</a>
+	</p>
 	<div id="time"></div>
 	<marquee>
 		欢迎<%=session.getAttribute("user")%>进入系统！

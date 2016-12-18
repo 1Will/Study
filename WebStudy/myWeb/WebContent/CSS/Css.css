@@ -172,9 +172,10 @@
 	
 }
 
-ul {
+.ul1 {
 	float: left;
-	width: 70%;
+	width: 50%;
+	margin-top: 20%;
 }
 
 li {
@@ -184,6 +185,11 @@ li {
 
 span {
 	font-family: 微软雅黑;
+}
+#logout{
+	font-family: 微软雅黑;
+	color:#ff8040;
+	letter-spacing: 2px;
 }
 
 a {

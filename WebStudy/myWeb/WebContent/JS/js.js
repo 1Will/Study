@@ -95,6 +95,9 @@ $('#game1').bind('click',function(){
 $('#game2').bind('click',function(){
 	$('#iframe1').attr("src","game2/snack.html");
 })
+$('#game3').bind('click',function(){
+	$('#iframe1').attr("src","game3/game3.html");
+})
 
 
-setInterval("time.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+setInterval("$('#time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
