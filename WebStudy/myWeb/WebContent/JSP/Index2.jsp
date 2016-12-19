@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@page import="java.util.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,6 +18,11 @@
 	<p id="h3h" >
 		点击此处--><a id="logout" href="../JSP/logout.jsp">退出</a>
 	</p>
+	
+	<div>
+	<%Set all=(Set)this.getServletContext().getAttribute("online"); %>
+	<p> 当前在线人数：<%=all.size() %>人</p>
+	</div>
 	<div id="time"></div>
 	<marquee>
 		欢迎<%=session.getAttribute("user")%>进入系统！
