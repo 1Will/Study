@@ -15,11 +15,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class URLTest {
-	static int days = 10;
-	static int beginyear = 2014;
-	static int beginmonth = 12;
-	static int beginday = 20;
-	static String today = "2014/12.30";
+	static int days = 2900;
+	static int beginyear = 2011;
+	static int beginmonth = 6;
+	static int beginday = 30;
+	static String today = "2016/12.15";
 
 	// 一个public方法，返回字符串，错误则返回"error open url"
 	public static String getContent(String strUrl) {
@@ -156,8 +156,9 @@ public class URLTest {
 				URL urlObj = new URL(url[i]);
 				HttpURLConnection oc = (HttpURLConnection) urlObj.openConnection();
 				oc.setUseCaches(false);
-				oc.setConnectTimeout(3000); // 设置超时时间
+				oc.setConnectTimeout(30000); // 设置超时时间
 				status = oc.getResponseCode();// 请求状态
+				oc.disconnect();
 				if (200 == status) {
 					// 200是请求地址顺利连通。。
 					String word[] = getword(url[i]);
@@ -167,6 +168,9 @@ public class URLTest {
 				e.printStackTrace();
 				throw e;
 			}
+			/*if(i==200||i==400||i==600||i==800||i==1000||i==1200){
+				System.gc();
+			}*/
 		}
 		writeFile("</table></body></html>");
 	}

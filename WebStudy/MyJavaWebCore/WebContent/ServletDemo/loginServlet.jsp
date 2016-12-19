@@ -8,10 +8,10 @@
 </head>
 <body>
 <h2>请输入用户信息：</h2><br>
-<form method="post" action="<%=request.getContextPath()%>/Tservlet" >
+<form method="post" action="/MyJavaWebCore/Tservlet" >
 
 <label>用户名：</label><input type="text" name="username" ><br>
-<label>密码：</label><input type="password" name="passwd">
+<label>密&nbsp;码：</label><input type="password" name="passwd">
 <input type="submit" value="提交">
 <input type="reset" value="重置"><br>
 </form>
