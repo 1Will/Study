@@ -15,14 +15,16 @@
 	<%-- <%
 		if (session.getAttribute("user") != null) {
 	%> --%>
-	<p id="h3h" >
-		点击此处--><a id="logout" href="../JSP/logout.jsp">退出</a>
-	</p>
 	
-	<div>
 	<%Set all=(Set)this.getServletContext().getAttribute("online"); %>
-	<p> 当前在线人数：<%=all.size() %>人</p>
+	
+	<div id="titlediv">
+	<span id="h2h" >
+		点击此处--><a id="logout" href="../JSP/logout.jsp">退出</a></span>
+	<span id="h3h"> 当前在线人数：<%=all.size() %>人</span>
+	
 	</div>
+	
 	<div id="time"></div>
 	<marquee>
 		欢迎<%=session.getAttribute("user")%>进入系统！
