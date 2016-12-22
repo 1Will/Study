@@ -46,8 +46,9 @@ public class Submit extends HttpServlet {
 					"张三".equals(uname) && "123".equals(pass)||
 					"王五".equals(uname) && "123".equals(pass)) {
 				/* response.setHeader("refresh", "0;URL=JSP/Index2.jsp"); */
-				session.setAttribute("user", uname);
 				/*context.getRequestDispatcher("/JSP/Index2.jsp").forward(request, response);*/
+				session.setAttribute("user", uname);
+				session.setMaxInactiveInterval(600);
 				response.sendRedirect(request.getContextPath()+"/JSP/Index2.jsp");
 			} else {
 				out.print("<script language='javascript'>alert('用户名或密码错误！！！')</script>");

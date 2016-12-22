@@ -20,7 +20,7 @@
 	
 	<div id="titlediv">
 	<span id="h2h" >
-		点击此处--><a id="logout" href="../JSP/logout.jsp">退出</a></span>
+		点击此处--><a id="logout" href="logout.jsp">退出</a></span>
 	<span id="h3h"> 当前在线人数：<%=all.size() %>人</span>
 	
 	</div>

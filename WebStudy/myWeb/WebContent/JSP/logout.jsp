@@ -9,7 +9,7 @@
 <body>
 <%
 response.setHeader("refresh","2;URL=../Index.jsp");
-session.invalidate();
+//session.invalidate();
 %>
 <h3>您已成功退出系统，两秒后跳转到首页</h3>
 <h3>如果没有跳转，请按<a href="../Index.jsp">此处</a></h3>

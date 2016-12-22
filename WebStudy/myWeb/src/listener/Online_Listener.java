@@ -55,25 +55,23 @@ public class Online_Listener implements HttpSessionListener, HttpSessionAttribut
 		// TODO Auto-generated method stub
 		Set all = (Set) this.app.getAttribute("online");
 		all.remove(arg0.getSession().getAttribute("name"));
+		//arg0.getSession().invalidate();
 		this.app.setAttribute("online", all);
 	}
 
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void attributeReplaced(HttpSessionBindingEvent arg0) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void sessionCreated(HttpSessionEvent arg0) {
 		// TODO Auto-generated method stub
-
 	}
 
 }
