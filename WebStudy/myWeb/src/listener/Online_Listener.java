@@ -54,8 +54,11 @@ public class Online_Listener implements HttpSessionListener, HttpSessionAttribut
 	public void sessionDestroyed(HttpSessionEvent arg0) {
 		// TODO Auto-generated method stub
 		Set all = (Set) this.app.getAttribute("online");
+		if(!(all.isEmpty())){
+			//System.out.println(all.isEmpty());
 		all.remove(arg0.getSession().getAttribute("name"));
 		//arg0.getSession().invalidate();
+		}
 		this.app.setAttribute("online", all);
 	}
 
