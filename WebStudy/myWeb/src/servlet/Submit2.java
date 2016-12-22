@@ -16,7 +16,7 @@ import com.sun.glass.ui.Application;
 /**
  * Servlet implementation class Submit
  */
-@WebServlet("/servlet/Submit")
+@WebServlet("/servlet/Submit2")
 public class Submit2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

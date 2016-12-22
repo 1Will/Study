@@ -61,23 +61,32 @@ public class Submit extends HttpServlet {
 		      System.out.println("Success connect Mysql server!");
 		      ResultSet rs = stmt.executeQuery("select * from consumer");
 		      while(rs.next()){
-		    	  if(rs.getString("name").equals(uname)){
-		    		  
+		    	  String na=rs.getString("name");
+		    	  String pw=rs.getString("passwd");
+		    	  if(na.equals(uname)){
+		    		  if(pw.equals(pass)){
+		    			  session.setAttribute("user", uname);
+		  				session.setMaxInactiveInterval(600);
+		  				response.sendRedirect(request.getContextPath()+"/JSP/Index2.jsp");
+		    		  }else {
+		    			  out.print("<script language='javascript'>alert('密码错误！！！')</script>");
+		  				response.setHeader("refresh", "0;URL=../Index.jsp");
+					}
 		    	  }
 		      }
-		      
-		      
+		      out.print("<script language='javascript'>alert('用户不存在！！！')</script>");
+			  response.setHeader("refresh", "0;URL=../Index.jsp");
 		 }catch (Exception e) {
 			 e.printStackTrace();
 		}
 		
 		/*ServletContext context = getServletConfig().getServletContext();*/
-		if (!(uname == null || pass == null || "".equals(uname) || "".equals(pass))) {
+		/*if (!(uname == null || pass == null || "".equals(uname) || "".equals(pass))) {
 			if ("李四".equals(uname) && "123".equals(pass)||
 					"张三".equals(uname) && "123".equals(pass)||
 					"王五".equals(uname) && "123".equals(pass)) {
-				/* response.setHeader("refresh", "0;URL=JSP/Index2.jsp"); */
-				/*context.getRequestDispatcher("/JSP/Index2.jsp").forward(request, response);*/
+				 response.setHeader("refresh", "0;URL=JSP/Index2.jsp"); 
+				context.getRequestDispatcher("/JSP/Index2.jsp").forward(request, response);
 				session.setAttribute("user", uname);
 				session.setMaxInactiveInterval(600);
 				response.sendRedirect(request.getContextPath()+"/JSP/Index2.jsp");
@@ -90,7 +99,7 @@ public class Submit extends HttpServlet {
 			out.print("<script language='javascript'>alert('用户名或密码不能为空！！！')</script>");
 			response.setHeader("refresh", "0;URL=../Index.jsp");
 			// response.sendRedirect(request.getContextPath()+"/Index.jsp");
-		}
+		}*/
 	}
 
 	/**
