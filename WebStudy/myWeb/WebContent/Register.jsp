@@ -7,6 +7,13 @@
 <title>注册用户</title>
 </head>
 <body>
+<div>
+<form action="/servlet/Rgister" method="post">
+输入姓名：<input id="setName" name='name' type="text"><br><br>
+输入密码：<input id="setPw" name='passwd' type="password"><br><br>
+确认密码：<input id="setPw2" name='passwd2' type="password"><br><br>
 
+</form>
+</div>
 </body>
 </html>

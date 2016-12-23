@@ -1,11 +1,7 @@
 package servlet;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.io.*;
+import java.sql.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,16 +31,11 @@ public class Submit extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		/*
-		 * response.setContentType("text/html;charset=UTF-8");
-		 * request.setCharacterEncoding("UTF-8");
-		 */
 		String uname = (String) request.getParameter("name");
 		String pass = (String) request.getParameter("password");
 		HttpSession session = request.getSession();
 		PrintWriter out = response.getWriter();
 		if (!(uname == null || pass == null || "".equals(uname) || "".equals(pass))) {
-
 			try {
 				Class.forName("com.mysql.jdbc.Driver"); // 加载MYSQL JDBC驱动程序
 				// Class.forName("org.gjt.mm.mysql.Driver");
@@ -59,9 +50,11 @@ public class Submit extends HttpServlet {
 				Statement stmt = connect.createStatement();
 				System.out.println("Success connect Mysql server!");
 				ResultSet rs = stmt.executeQuery("select * from consumer");
-				int n=rs.getMetaData().getColumnCount();
-				//while (rs.next()) {
-				for(int i=1;i<=n;i++){
+				// while (rs.next()) {
+				rs.last();
+				int n = rs.getRow();
+				rs.first();
+				for (int i = 1; i <= n; i++) {
 					rs.next();
 					String na = rs.getString("name");
 					String pw = rs.getString("passwd");
@@ -77,11 +70,11 @@ public class Submit extends HttpServlet {
 							break;
 						}
 					}
-					if(i==n){
-					out.print("<script language='javascript'>alert('用户不存在！！！')</script>");
-					response.setHeader("refresh", "0;URL=../Index.jsp");
+					if (i == n) {
+						out.print("<script language='javascript'>alert('用户不存在！！！')</script>");
+						response.setHeader("refresh", "0;URL=../Index.jsp");
 					}
-					
+
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
