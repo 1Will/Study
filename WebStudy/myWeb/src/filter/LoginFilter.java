@@ -50,7 +50,7 @@ public class LoginFilter implements Filter {
 		if(id!=null){
 			chain.doFilter(request, response);
 		}else{
-			res.sendRedirect("../Index.jsp");
+			res.sendRedirect("../Login.jsp");
 		}
 	}
 

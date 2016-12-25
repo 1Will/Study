@@ -13,43 +13,36 @@ import javax.servlet.http.HttpSession;
 
 import com.sun.glass.ui.Application;
 
-/**
- * Servlet implementation class Submit
- */
 @WebServlet("/servlet/Submit2")
 public class Submit2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public Submit2() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		/*response.setContentType("text/html;charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");*/
+		/*
+		 * response.setContentType("text/html;charset=UTF-8");
+		 * request.setCharacterEncoding("UTF-8");
+		 */
 		String uname = (String) request.getParameter("name");
 		String pass = (String) request.getParameter("password");
 		HttpSession session = request.getSession();
 		PrintWriter out = response.getWriter();
-		/*ServletContext context = getServletConfig().getServletContext();*/
+		/* ServletContext context = getServletConfig().getServletContext(); */
 		if (!(uname == null || pass == null || "".equals(uname) || "".equals(pass))) {
-			if ("李四".equals(uname) && "123".equals(pass)||
-					"张三".equals(uname) && "123".equals(pass)||
-					"王五".equals(uname) && "123".equals(pass)) {
+			if ("李四".equals(uname) && "123".equals(pass) || "张三".equals(uname) && "123".equals(pass)
+					|| "王五".equals(uname) && "123".equals(pass)) {
 				/* response.setHeader("refresh", "0;URL=JSP/Index2.jsp"); */
-				/*context.getRequestDispatcher("/JSP/Index2.jsp").forward(request, response);*/
+				/*
+				 * context.getRequestDispatcher("/JSP/Index2.jsp").forward(
+				 * request, response);
+				 */
 				session.setAttribute("user", uname);
 				session.setMaxInactiveInterval(600);
-				response.sendRedirect(request.getContextPath()+"/JSP/Index2.jsp");
+				response.sendRedirect(request.getContextPath() + "/JSP/Index2.jsp");
 			} else {
 				out.print("<script language='javascript'>alert('用户名或密码错误！！！')</script>");
 				response.setHeader("refresh", "0;URL=../Index.jsp");
@@ -62,14 +55,9 @@ public class Submit2 extends HttpServlet {
 		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

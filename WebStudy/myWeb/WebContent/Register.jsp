@@ -8,10 +8,12 @@
 </head>
 <body>
 <div>
-<form action="/servlet/Rgister" method="post">
+<form action="<%=request.getContextPath() %>/servlet/Rgister" method="post">
 输入姓名：<input id="setName" name='name' type="text"><br><br>
 输入密码：<input id="setPw" name='passwd' type="password"><br><br>
 确认密码：<input id="setPw2" name='passwd2' type="password"><br><br>
+<input type="submit" value="提交">
+<input type="reset" value="重置">
 
 </form>
 </div>
