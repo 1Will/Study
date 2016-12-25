@@ -8,8 +8,11 @@
 </head>
 <body>
 <%
+session.getAttribute("user");
 response.setHeader("refresh","2;URL=../Login.jsp");
-//session.invalidate();
+session.invalidate();
+/* String a =(String)session.getAttribute("user");
+session.removeAttribute(a); */
 %>
 <h3>您已成功退出系统，两秒后跳转到首页</h3>
 <h3>如果没有跳转，请按<a href="../Login.jsp">此处</a></h3>
