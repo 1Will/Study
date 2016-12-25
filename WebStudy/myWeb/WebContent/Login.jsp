@@ -7,6 +7,7 @@
 <title>登录页面</title>
 <script type="text/javascript" src="JS/jquery.min.js"></script>
 <link href="CSS/Css.css" type="text/css" rel="stylesheet">
+<link rel="shortcut  icon" type="image/x-icon" href="Images/Computer.ico" media="screen">
 </head>
 <body class="body2">
 <h5><a href="Index.jsp">返回首页</a></h5>

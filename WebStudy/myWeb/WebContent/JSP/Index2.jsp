@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>我的主页</title>
 <link href="../CSS/Css.css" type="text/css" rel="stylesheet" />
+<link rel="shortcut  icon" type="image/x-icon" href="../Images/Computer.ico" media="screen">
 <script type="text/javascript" src="../JS/jquery.min.js"></script>
 <script>setInterval("time.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
 </script>

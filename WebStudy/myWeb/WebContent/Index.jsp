@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut  icon" type="image/x-icon" href="Images/Computer.ico" media="screen">
 <title>Insert title here</title>
 </head>
 <body>
