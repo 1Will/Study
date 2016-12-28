@@ -1,0 +1,37 @@
+@CHARSET "UTF-8";
+
+td {
+	width: 140px;
+	height: 30px;
+	text-align: center;
+}
+
+input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	text-align: center;
+}
+
+/* Tble.jsp */
+#tbBn{
+	width: 60px;
+	height: 25px;
+	background-color: #C0DFFD;
+}
+
+
+/* add.jsp */
+
+#bn {
+	width: 60px;
+	height: 25px;
+	background-color: #56D0F4;
+}
+
+/* update.jsp */
+#updateBn{
+	width: 120px;
+	height: 25px;
+	background-color: #56D0F4;
+}
