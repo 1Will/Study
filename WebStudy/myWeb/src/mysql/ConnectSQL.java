@@ -38,7 +38,7 @@ public class ConnectSQL {
 	
 	public void execute(String order) throws SQLException {
 		Statement stmt = connect();
-		stmt.execute(order);
+		stmt.executeUpdate(order);
 	}
 
 }
