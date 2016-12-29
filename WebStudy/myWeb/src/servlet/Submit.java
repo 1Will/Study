@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import mysql.ConnectSQL;
+import mysql.ConnectSQL;;
 
 /**
  * Servlet implementation class Submit
@@ -38,10 +38,10 @@ public class Submit extends HttpServlet {
 		String pass = (String) request.getParameter("password");
 		HttpSession session = request.getSession();
 		PrintWriter out = response.getWriter();
-		ConnectSQL csql = new ConnectSQL();
 		ResultSet pw = null;
 		if (!(uname == null || pass == null || "".equals(uname) || "".equals(pass))) {
 			try {
+				ConnectSQL csql = new ConnectSQL();
 				pw = csql.getResult("select passwd from consumer where name = '" + uname + "'");
 				if (pw.next()) {
 					if (pw.getString("passwd").equals(pass)) {

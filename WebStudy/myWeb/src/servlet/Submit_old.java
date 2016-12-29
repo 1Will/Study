@@ -14,10 +14,10 @@ import javax.servlet.http.HttpSession;
 import com.sun.glass.ui.Application;
 
 @WebServlet("/servlet/Submit2")
-public class Submit2 extends HttpServlet {
+public class Submit_old extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public Submit2() {
+	public Submit_old() {
 		super();
 	}
 

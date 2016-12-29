@@ -2,17 +2,15 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import mysql.*;
+
+import mysql.ConnectSQL;
 
 /**
  * Servlet implementation class Rgister
@@ -39,11 +37,11 @@ public class Rgister extends HttpServlet {
 		String pw = request.getParameter("passwd");
 		String pw2 = request.getParameter("passwd2");
 		PrintWriter out = response.getWriter();
-		ConnectSQL csql = new ConnectSQL();
 		if (!(na == null || "".equals(na) || pw == null || "".equals(pw) || pw2 == null || "".equals(pw2))) {
 			if (pw.equals(pw2)) {
 				ResultSet name = null;
 				try {
+					ConnectSQL csql = new ConnectSQL();
 					name = csql.getResult("select name from consumer where name = '" + na + "'");
 					if (!name.next()) {
 						try {
