@@ -1,4 +1,4 @@
-package toolPackage;
+package doString;
 
 public class Reverse {
 	public static String reverse(String str) {
