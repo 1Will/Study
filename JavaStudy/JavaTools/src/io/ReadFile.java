@@ -27,7 +27,7 @@ public class ReadFile {
 		return cbuf;
 	}
 	
-	public char[] inputFilec() throws IOException {
+	public char[] inputFilec() throws IOException {    //字符流按编码读取数据
 		char cbuf[] = new char[1024];
 		InputStream in =new FileInputStream(file);
 		Reader reader =new InputStreamReader(in,"utf-8");
