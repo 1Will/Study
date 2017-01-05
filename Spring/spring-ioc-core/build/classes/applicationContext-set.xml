@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- BoyConstructor.java  -->
+<bean id="chinaGirlFriend" class="com.wy.spring.set.ChineseGirlFriend">
+<property name="language" value="chinese"></property>
+</bean>
+<bean id="boyConstructor" class="com.wy.spring.set.BoyConstructor">
+<constructor-arg ref="chinaGirlFriend"></constructor-arg>
+</bean>
+
+<!-- BoySetter.java  -->
+<bean id="japanGirlFriend" class="com.wy.spring.set.JapanGirlFriend">
+<property name="language" value="japanese"></property>
+</bean>
+
+<bean id="boySetter" class="com.wy.spring.set.BoySetter">
+<property name="girlFriend" ref="japanGirlFriend"></property>
+</bean>
+
+<!-- BoySetter.java  -->
+<bean id="usaGirlFriend" class="com.wy.spring.set.UsaGirlFriend">
+<property name="language" value="english"></property>
+</bean>
+<bean id="boyPNameSpace" class="com.wy.spring.set.BoyPNameSpace" 
+p:girlFriend-ref="usaGirlFriend" />
+
+
+
+</beans>
