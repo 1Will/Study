@@ -8,6 +8,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import com.wy.spring.jdbc.User;
+
 public class Test {
 	private static final Logger LOGGER =Logger.getLogger(Test.class);
 	private JdbcTemplate jdbcTemplate;
