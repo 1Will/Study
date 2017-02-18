@@ -104,6 +104,11 @@ public class ProductController {
 			product.setDescription(productForm.getDescription());
 			product.setWeight(productForm.getWeight());
 			product.setSize(productForm.getSize());
+			try {
+				product.setPrice(Double.parseDouble(productForm.getPrice()));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			return "redirect:/product_viewAll.action";
 		}
 		
