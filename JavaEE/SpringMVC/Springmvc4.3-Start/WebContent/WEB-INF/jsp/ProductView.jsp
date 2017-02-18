@@ -15,6 +15,10 @@
 		Product Name:${product.name} <br />
 		Description:${product.description} <br /> 
 		Price:￥${product.price} <br />
+		Weight:${product.weight} <br />
+		Size:${product.size} <br />
 	</div>
+	<a href="../product_input.action">继续添加</a>
+	<a href="../product_viewAll.action">查看所有</a>
 </body>
 </html>

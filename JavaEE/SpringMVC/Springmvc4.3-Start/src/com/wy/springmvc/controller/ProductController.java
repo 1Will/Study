@@ -1,5 +1,9 @@
 package com.wy.springmvc.controller;
 
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +25,8 @@ public class ProductController {
 	// 自动注入向后端数据库写数据的组件
 	@Autowired
 	private ProductService productService;
+	@Autowired
+	private HttpServletRequest request;
 
 	@RequestMapping(value = "/product_input")
 	private String inputProduct() {
@@ -34,6 +40,8 @@ public class ProductController {
 		Product product = new Product();
 		product.setName(productForm.getName());
 		product.setDescription(productForm.getDescription());
+		product.setWeight(productForm.getWeight());
+		product.setSize(productForm.getSize());
 
 		try {
 			product.setPrice(Double.parseDouble(productForm.getPrice()));
@@ -48,18 +56,63 @@ public class ProductController {
 
 		return "redirect:/product_view/" + saveProduct.getId() + ".action";
 	}
-//http://localhost:8080/SpringMVC4.3-Start/product_view/2.action
-	@RequestMapping(value ="/product_view/{id}") //{}内的id为路径变量
-	public String viewProduct(@PathVariable Long id ,Model model){
-		Product product =productService.get(id);
-		model.addAttribute("product",product);
+
+	// http://localhost:8080/SpringMVC4.3-Start/product_view/2.action
+	@RequestMapping(value = "/product_view/{id}") // {}内的id为路径变量
+	public String viewProduct(@PathVariable Long id, Model model) {
+		logger.info("viewProduct 被调用！");
+		Product product = productService.get(id);
+		model.addAttribute("product", product);
 		return "ProductView";
 	}
-	//http://localhost:8080/SpringMVC4.3-Start/product_retrieve.action?id=4
-		@RequestMapping(value ="/product_retrieve")
-		public String sendProduct(@RequestParam Long id ,Model model){
-			Product product =productService.get(id);
-			model.addAttribute("product",product);
-			return "ProductView";
+
+	// http://localhost:8080/SpringMVC4.3-Start/product_retrieve.action?id=4
+	@RequestMapping(value = "/product_retrieve")
+	public String sendProduct(@RequestParam Long id, Model model) {
+		Product product = productService.get(id);
+		model.addAttribute("product", product);
+		return "ProductView";
+	}
+
+	@RequestMapping(value = "/product_viewAll")
+	public String viewAllProduct(Model model) {
+		logger.info("viewAllProduct 被调用！");
+		Map<Long, Product> products = productService.getAll();
+		model.addAttribute("products", products);
+		return "ProductViewAll";
+	}
+
+	@RequestMapping(value = "/product_update", method = RequestMethod.POST)
+	public String updateProduct(Model model,ProductForm productForm) {
+		logger.info("updateProduct 被调用！");
+		Long id = Long.parseLong(request.getParameter("id"));
+		model.addAttribute("id", id);
+		/*
+		 * String ids=request.getParameter("id"); Long id=Long.parseLong(ids);
+		 */
+		// Map<Long, Product> products =productService.getAll();
+			Product product = productService.get(id);
+			model.addAttribute("product", product);
+			return "ProductUpdate";
+	}
+		@RequestMapping(value = "/product_update2", method = RequestMethod.POST)
+		public String updateProduct2(Model model,ProductForm productForm) {
+			logger.info("updateProduct2 被调用！");
+			Long id = Long.parseLong(request.getParameter("id"));
+			Product product = productService.get(id);
+			product.setName(productForm.getName());
+			product.setDescription(productForm.getDescription());
+			product.setWeight(productForm.getWeight());
+			product.setSize(productForm.getSize());
+			return "redirect:/product_viewAll.action";
+		}
+		
+		@RequestMapping(value = "/product_delete", method = RequestMethod.POST)
+		public String deleteProduct(Model model,ProductForm productForm) {
+			logger.info("deleteProduct 被调用！");
+			Long id = Long.parseLong(request.getParameter("id"));
+			Map<Long, Product> products =productService.getAll();
+			products.remove(id);
+			return "redirect:/product_viewAll.action";
 		}
 }

@@ -8,4 +8,6 @@ public class ProductForm {
 	private String name;
 	private String description;
 	private String price;
+	private Long weight;
+	private String size;
 }

@@ -18,6 +18,8 @@ public class ProductServiceImpl implements ProductService {
 		product.setName("MiBook");
 		product.setDescription("MiBook write code is very cool!");
 		product.setPrice(4999.0d);
+		product.setWeight(49L);
+		product.setSize("100*150");
 		add(product);
 	}
 	
@@ -34,5 +36,10 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public Product get(long id) {
 		return products.get(id);
+	}
+	
+	@Override
+	public Map<Long, Product> getAll(){
+		return products;
 	}
 }

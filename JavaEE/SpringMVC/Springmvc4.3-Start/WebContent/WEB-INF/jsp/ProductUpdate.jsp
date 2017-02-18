@@ -8,28 +8,30 @@
 </head>
 <body>
 	<div>
-	<form action="product_save.action" method="post">
+	<form action="product_update2.action" method="post">
 	<fieldset>
-		<legend>Add a product</legend>
+		<legend>Update product</legend>
+		<input type="hidden"  id="name" name="id" value="${product.id}">
+		
 		<label for="name">Product Name:</label>
-		<input type="text"  id="name" name="name" value="" tabindex="1" />
+		<input type="text"  id="name" name="name" value="${product.name}" tabindex="1" />
 		
 		<label for="description">Description:</label>
-		<input type="text"  id="description" name="description" value="" tabindex="2" />
+		<input type="text"  id="description" name="description" value="${product.description}" tabindex="2" />
 		
 		<label for="price">Price:</label>
-		<input type="text"  id="price" name="price" value="" tabindex="3" />
+		<input type="text"  id="price" name="price" value="${product.price}" tabindex="3" />
 
 		<label for="weight">Weight:</label>
-		<input type="text"  id="weight" name="weight" value="" tabindex="3" />
+		<input type="text"  id="weight" name="weight" value="${product.weight}" tabindex="3" />
 		
 		<label for="size">Size:</label>
-		<input type="text"  id="size" name="size" value="" tabindex="3" />
+		<input type="text"  id="size" name="size" value="${product.size}" tabindex="3" />
 		
 		<div id="buttons">
 		<label for="dummy" > </label>
 		<input id="reset" type="reset"  tabindex="4"/>
-		<input id="submit" type="submit" tabindex="5" value="Add Product" />
+		<input id="submit" type="submit" tabindex="5" value="Update Product" />
 		</div>
 	</fieldset>
 	</form>
