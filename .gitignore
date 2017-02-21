@@ -1,7 +1,12 @@
 /bin
 
+
 *.class
+
 *.classpath
+
 *.eml
+
 *.iml
-.idea
+
+*.idea
