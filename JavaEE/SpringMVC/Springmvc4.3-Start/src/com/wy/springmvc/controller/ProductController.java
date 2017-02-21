@@ -82,42 +82,32 @@ public class ProductController {
 		return "ProductViewAll";
 	}
 
+	// 通过id修改，传到修改页面
 	@RequestMapping(value = "/product_update", method = RequestMethod.POST)
-	public String updateProduct(Model model,ProductForm productForm) {
+	public String updateProduct(Model model, ProductForm productForm) {
 		logger.info("updateProduct 被调用！");
 		Long id = Long.parseLong(request.getParameter("id"));
 		model.addAttribute("id", id);
-		/*
-		 * String ids=request.getParameter("id"); Long id=Long.parseLong(ids);
-		 */
-		// Map<Long, Product> products =productService.getAll();
-			Product product = productService.get(id);
-			model.addAttribute("product", product);
-			return "ProductUpdate";
+		Product product = productService.get(id);
+		model.addAttribute("product", product);
+		return "ProductUpdate";
 	}
-		@RequestMapping(value = "/product_update2", method = RequestMethod.POST)
-		public String updateProduct2(Model model,ProductForm productForm) {
-			logger.info("updateProduct2 被调用！");
-			Long id = Long.parseLong(request.getParameter("id"));
-			Product product = productService.get(id);
-			product.setName(productForm.getName());
-			product.setDescription(productForm.getDescription());
-			product.setWeight(productForm.getWeight());
-			product.setSize(productForm.getSize());
-			try {
-				product.setPrice(Double.parseDouble(productForm.getPrice()));
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			return "redirect:/product_viewAll.action";
-		}
-		
-		@RequestMapping(value = "/product_delete", method = RequestMethod.POST)
-		public String deleteProduct(Model model,ProductForm productForm) {
-			logger.info("deleteProduct 被调用！");
-			Long id = Long.parseLong(request.getParameter("id"));
-			Map<Long, Product> products =productService.getAll();
-			products.remove(id);
-			return "redirect:/product_viewAll.action";
-		}
+
+	// 修改数据
+	@RequestMapping(value = "/product_update2", method = RequestMethod.POST)
+	public String updateProduct2(Model model, ProductForm productForm) {
+		logger.info("updateProduct2 被调用！");
+		Long id = Long.parseLong(request.getParameter("id"));
+		productService.update(id, productForm);
+		return "redirect:/product_viewAll.action";
+	}
+
+	// 删除数据
+	@RequestMapping(value = "/product_delete", method = RequestMethod.POST)
+	public String deleteProduct(Model model, ProductForm productForm) {
+		logger.info("deleteProduct 被调用！");
+		Long id = Long.parseLong(request.getParameter("id"));
+		productService.del(id);
+		return "redirect:/product_viewAll.action";
+	}
 }
