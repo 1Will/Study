@@ -13,53 +13,54 @@ import com.demo.web.auth.AuthPassport;
 @Controller
 @RequestMapping(value = "/helloworld")
 public class HelloWorldController extends BaseController {
-	
-	//@AuthPassport
-	@RequestMapping(value="/*", method = {RequestMethod.GET})
-    public ModelAndView urlTest(){
-		
-		ModelAndView modelAndView = new ModelAndView();   
-		modelAndView.setViewName("urltest");  
-        return modelAndView;
-    }
 
-	//@AuthPassport
-	@RequestMapping(value={"/index","/hello"})
-    public ModelAndView index() throws SQLException{
-		
-		//throw new SQLException("数据库异常。");
-		
-		ModelAndView modelAndView = new ModelAndView();  
-		modelAndView.addObject("message", "Hello World!");  
-		modelAndView.setViewName("index");  
-        return modelAndView;
-    }
-	
-	@RequestMapping(value="/detail/{id}", method = {RequestMethod.GET})
-    public ModelAndView getDetail(@PathVariable(value="id") Integer id){
-		
-		ModelAndView modelAndView = new ModelAndView();  
-		modelAndView.addObject("id", id);  
-		modelAndView.setViewName("detail");  
-        return modelAndView;
-    }
-	
-	@RequestMapping(value="/reg/{name:\\w+}-{age:\\d+}", method = {RequestMethod.GET})
-    public ModelAndView regUrlTest(@PathVariable(value="name") String name, @PathVariable(value="age") Integer age){
-		
-		ModelAndView modelAndView = new ModelAndView();   
-		modelAndView.addObject("name", name); 
-		modelAndView.addObject("age", age); 
-		modelAndView.setViewName("regurltest");  
-        return modelAndView;
-    }
-	
-	@RequestMapping(value="/paramstest", params="example!=AAA", method = {RequestMethod.GET})
-	public ModelAndView paramsTest(){
-		
-		ModelAndView modelAndView = new ModelAndView();   
-		modelAndView.setViewName("paramstest");  
-        return modelAndView;
+	// @AuthPassport
+	@RequestMapping(value = "/*", method = { RequestMethod.GET })
+	public ModelAndView urlTest() {
+
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("urltest");
+		return modelAndView;
 	}
-	
+
+	// @AuthPassport
+	@RequestMapping(value = { "/index", "/hello" })
+	public ModelAndView index() throws SQLException {
+
+		//throw new SQLException("数据库异常。");
+
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("message", "Hello World!");
+		modelAndView.setViewName("index");
+		return modelAndView;
+	}
+
+	@RequestMapping(value = "/detail/{id}", method = { RequestMethod.GET })
+	public ModelAndView getDetail(@PathVariable(value = "id") Integer id) {
+
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("id", id);
+		modelAndView.setViewName("detail");
+		return modelAndView;
+	}
+
+	@RequestMapping(value = "/reg/{name:\\w+}-{age:\\d+}", method = { RequestMethod.GET })
+	public ModelAndView regUrlTest(@PathVariable(value = "name") String name,
+			@PathVariable(value = "age") Integer age) {
+
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("name", name);
+		modelAndView.addObject("age", age);
+		modelAndView.setViewName("regurltest");
+		return modelAndView;
+	}
+
+	@RequestMapping(value = "/paramstest", params = "example!=AAA", method = { RequestMethod.GET })
+	public ModelAndView paramsTest() {
+
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("paramstest");
+		return modelAndView;
+	}
+
 }

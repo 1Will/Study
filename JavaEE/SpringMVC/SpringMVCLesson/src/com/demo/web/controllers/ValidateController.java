@@ -13,23 +13,24 @@ import com.demo.web.models.ValidateModel;
 @Controller
 @RequestMapping(value = "/validate")
 public class ValidateController {
-	
-	@RequestMapping(value="/test", method = {RequestMethod.GET})
-	public String test(Model model){
 
-		if(!model.containsAttribute("contentModel")){
-            model.addAttribute("contentModel", new ValidateModel());
-        }
+	@RequestMapping(value = "/test", method = { RequestMethod.GET })
+	public String test(Model model) {
+
+		if (!model.containsAttribute("contentModel")) {
+			model.addAttribute("contentModel", new ValidateModel());
+		}
 		return "validatetest";
 	}
-	
-	@RequestMapping(value="/test", method = {RequestMethod.POST})
-	public String test(Model model, @Valid @ModelAttribute("contentModel") ValidateModel validateModel, BindingResult result) throws NoSuchAlgorithmException{
-		
-		//如果有验证错误 返回到form页面
-        if(result.hasErrors())
-            return test(model);
-    	return "validatesuccess"; 	
+
+	@RequestMapping(value = "/test", method = { RequestMethod.POST })
+	public String test(Model model, @Valid @ModelAttribute("contentModel") ValidateModel validateModel,
+			BindingResult result) throws NoSuchAlgorithmException {
+
+		// 如果有验证错误 返回到form页面
+		if (result.hasErrors())
+			return test(model);
+		return "validatesuccess";
 	}
-	
+
 }

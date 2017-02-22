@@ -10,19 +10,16 @@ import com.demo.web.models.FormatModel;
 @Controller
 @RequestMapping(value = "/format")
 public class FormatController {
-	
-	@RequestMapping(value="/test", method = {RequestMethod.GET})
-	public String test(Model model) throws NoSuchFieldException, SecurityException{
-		if(!model.containsAttribute("contentModel")){
-            
-            FormatModel formatModel=new FormatModel();
 
-    		formatModel.setMoney(12345.678);
-    		formatModel.setDate(new Date());
-            
-            model.addAttribute("contentModel", formatModel);
-        }
+	@RequestMapping(value = "/test", method = { RequestMethod.GET })
+	public String test(Model model) throws NoSuchFieldException, SecurityException {
+		if (!model.containsAttribute("contentModel")) {
+			FormatModel formatModel = new FormatModel();
+			formatModel.setMoney(12345.678);
+			formatModel.setDate(new Date());
+			model.addAttribute("contentModel", formatModel);
+		}
 		return "formattest";
 	}
-	
+
 }
