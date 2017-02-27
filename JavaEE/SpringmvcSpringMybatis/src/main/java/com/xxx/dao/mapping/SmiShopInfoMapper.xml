@@ -21,4 +21,24 @@
 		where shop_no = #{shopNo,jdbcType=VARCHAR} and shop_password = #{password,jdbcType=VARCHAR}
 	</select>
 
+	<!-- 查询所有-->
+	<select id="getAll" resultMap="BaseResultMap">
+	select * from smi_shop_info
+	</select>
+	
+	<!-- 根据id查询 -->
+	<select id="getById" resultMap="BaseResultMap">
+	select * from smi_shop_info where id = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<!-- 根据id删除 -->
+	<delete id="delById" parameterType="Integer">
+	delete from smi_shop_info where id = #{id,jdbcType=INTEGER}
+	</delete>
+	
+	<update id="update" parameterType="com.xxx.model.SmiShopInfo">
+	update smi_shop_info set shop_No =#{shopNo:VARCHAR} , shop_Name = #{shopName:VARCHAR} , shop_Type = #{shopType:VARCHAR} , shop_Password = #{shopPassword:VARCHAR} , note= #{note:VARCHAR} where id = #{id:INTEGER}
+	</update>
+	
+	
 </mapper>

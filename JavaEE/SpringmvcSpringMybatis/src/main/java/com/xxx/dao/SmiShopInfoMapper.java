@@ -1,5 +1,7 @@
 package com.xxx.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 import com.xxx.model.SmiShopInfo;
@@ -23,5 +25,17 @@ public interface SmiShopInfoMapper {
 	public SmiShopInfo getByNoAndPwd(
 			@Param("password") String password, 
 			@Param("shopNo") String shopNo);
+	
+	/**
+	 * 查询所有
+	 * */
+	
+	public List<SmiShopInfo> getAll();
+	
+	public SmiShopInfo getById(@Param("id") Integer id);
+	
+	public void delById(@Param("id") Integer id);
+	
+	public void update(SmiShopInfo shopInfo);
 
 }

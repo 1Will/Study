@@ -1,5 +1,7 @@
 package com.xxx.service;
 
+import java.util.List;
+
 import com.xxx.model.SmiShopInfo;
 
 /**
@@ -18,5 +20,13 @@ public interface ISmiShopInfoService {
 	 * @throws Exception 
 	 */
 	public SmiShopInfo getShopByNoAndPwd(String shopNo, String password) throws Exception;
+
+	public List<SmiShopInfo> getAllShop();
+
+	void delete(Integer id);
+	
+	void update(SmiShopInfo shopInfo);
+
+	SmiShopInfo getById(Integer id);
 	
 }

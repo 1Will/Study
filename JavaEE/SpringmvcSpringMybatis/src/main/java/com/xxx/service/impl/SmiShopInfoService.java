@@ -1,5 +1,7 @@
 package com.xxx.service.impl;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,5 +33,24 @@ public class SmiShopInfoService implements ISmiShopInfoService {
 
 		return shopInfoMapper.getByNoAndPwd(password, shopNo);
 	}
+	
+	@Override
+	public SmiShopInfo getById(Integer id){
+		return shopInfoMapper.getById(id);
+	}
+	
+	@Override
+	public List<SmiShopInfo> getAllShop(){
+		return shopInfoMapper.getAll();
+	}
+	
+	@Override
+	public void delete(Integer id) {
+		shopInfoMapper.delById(id);
+	}
 
+	@Override
+	public void update(SmiShopInfo shopInfo) {
+		shopInfoMapper.update(shopInfo);
+	}
 }
