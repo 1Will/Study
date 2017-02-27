@@ -4,13 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="CSS/htmlCss.css" type="text/css" rel="stylesheet" />
 <link rel="shortcut  icon" type="image/x-icon" href="Images/Computer.ico" media="screen">
-<title>Insert title here</title>
+<title>主页</title>
 </head>
-<body>
-<div>
+<body id="reg">
+<div id="regDiv">
+<div id="regdiv1">
 <a href="Login.jsp">登录</a>&nbsp;
 <a href="Register.jsp">注册</a>
+</div>
 </div>
 </body>
 </html>

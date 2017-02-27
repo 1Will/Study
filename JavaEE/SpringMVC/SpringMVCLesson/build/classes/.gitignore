@@ -1,6 +1,6 @@
 /com/
+/messages.properties
 /messages_en_US.properties
 /messages_zh_CN.properties
-/messages.properties
-/validatemessages.properties
 /springservlet-config.xml
+/validatemessages.properties
