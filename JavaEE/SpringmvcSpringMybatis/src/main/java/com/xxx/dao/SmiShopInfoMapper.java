@@ -38,4 +38,6 @@ public interface SmiShopInfoMapper {
 	
 	public void update(SmiShopInfo shopInfo);
 
+	public void insert(SmiShopInfo shopInfo);
+
 }

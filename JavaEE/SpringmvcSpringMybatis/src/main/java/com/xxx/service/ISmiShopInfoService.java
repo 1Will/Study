@@ -29,4 +29,6 @@ public interface ISmiShopInfoService {
 
 	SmiShopInfo getById(Integer id);
 	
+	void insert(SmiShopInfo shopInfo);
+	
 }

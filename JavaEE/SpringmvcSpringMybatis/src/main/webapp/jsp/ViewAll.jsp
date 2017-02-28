@@ -17,6 +17,7 @@
 	<table border='1' align='center' cellspacing='0' cellpadding='0'>
 
 		<tr>
+			<td>序号</td>
 			<td>ID</td>
 			<td>Shop_NO</td>
 			<td>Shop_Name</td>
@@ -26,8 +27,10 @@
 			<td>操作</td>
 		</tr>
 
+		<% int i=1; %>
 		<c:forEach var="vo" items="${voList}">
 		<tr>
+			<td><%=i++ %></td>
 			<td>${vo.id}</td>
 			<td>${vo.shopNo}</td>
 			<td>${vo.shopName}</td>
@@ -41,5 +44,6 @@
 		</tr>
 		</c:forEach>
 	</table>
+	<center><a href="insert.do">添加用户</a></center>
 </body>
 </html>

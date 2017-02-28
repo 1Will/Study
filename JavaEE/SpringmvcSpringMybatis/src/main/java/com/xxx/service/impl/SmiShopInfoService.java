@@ -53,4 +53,9 @@ public class SmiShopInfoService implements ISmiShopInfoService {
 	public void update(SmiShopInfo shopInfo) {
 		shopInfoMapper.update(shopInfo);
 	}
+
+	@Override
+	public void insert(SmiShopInfo shopInfo) {
+		shopInfoMapper.insert(shopInfo);
+	}
 }

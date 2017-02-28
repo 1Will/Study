@@ -37,8 +37,11 @@
 	</delete>
 	
 	<update id="update" parameterType="com.xxx.model.SmiShopInfo">
-	update smi_shop_info set shop_No =#{shopNo:VARCHAR} , shop_Name = #{shopName:VARCHAR} , shop_Type = #{shopType:VARCHAR} , shop_Password = #{shopPassword:VARCHAR} , note= #{note:VARCHAR} where id = #{id:INTEGER}
+	update smi_shop_info set shop_No = #{shopNo:VARCHAR} , shop_Name = #{shopName:VARCHAR} , shop_Type = #{shopType:VARCHAR} , shop_Password = #{shopPassword:VARCHAR} , note= #{note:VARCHAR} where id = #{id:INTEGER}
 	</update>
 	
+	<insert id="insert" parameterType ="com.xxx.model.SmiShopInfo">
+	insert into smi_shop_info( shop_No,shop_Name,shop_Type,shop_Password,note ) value (#{shopNo:VARCHAR} , #{shopName:VARCHAR} , #{shopType:VARCHAR} , #{shopPassword:VARCHAR} , #{note:VARCHAR} )
+	</insert>
 	
 </mapper>

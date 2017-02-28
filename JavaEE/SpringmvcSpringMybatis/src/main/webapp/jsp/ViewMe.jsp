@@ -8,11 +8,11 @@
 <!--
 
   -->
-<title>显示所有</title>
+<title>显示</title>
 </head>
 <body>
 	<center>
-		<h3>显示所有</h3>
+		<h3>显示</h3>
 	</center>
 	<table border='1' align='center' cellspacing='0' cellpadding='0'>
 
@@ -23,7 +23,6 @@
 			<td>Shop_Type</td>
 			<td>Shop_Password</td>
 			<td>Note</td>
-			<td>操作</td>
 		</tr>
 
 		<tr>
@@ -33,11 +32,12 @@
 			<td>${vo.shopType}</td>
 			<td>${vo.shopPassword}</td>
 			<td>${vo.note}</td>
-			<td>
-			<a href="update1.do?id=${vo.id}">修改</a>
-			<a href="delete.do?id=${vo.id}">删除</a>
-			</td>
 		</tr>
 	</table>
+	<br>
+	<br>
+	<center>
+		<a href="viewAll.do">查看所有</a>
+	</center>
 </body>
 </html>

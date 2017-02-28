@@ -41,5 +41,6 @@
 		</tr>
 		</c:forEach>
 	</table>
+	<center><a href="insert.do">添加用户</a></center>
 </body>
 </html>

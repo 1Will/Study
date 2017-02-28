@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-呵呵
+
 <a href="pages/login.html">登录</a>
 </body>
 </html>

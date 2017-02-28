@@ -12,9 +12,10 @@
 </head>
 <body>
 	<center>
-		<h3>修改</h3>
+		<h3>修改页面</h3>
 	</center>
-	<form action="update2.do" method="post">
+	<!-- <form action="update2.do" method="post"> -->
+	<center>
 	<table border='1' align='center' cellspacing='0' cellpadding='0'>
 
 		<tr>
@@ -34,7 +35,11 @@
 			<td><input name="note" id="note" type="text" value="${vo.note}"></td>
 		</tr>
 	</table>
-	<input type="submit" value="提交">
-	</form>
+	<br>
+	<input type="submit" value="修改" onclick="update()">
+	</center>
+	<!-- </form> -->
+	<script src="pages/script/jquery.min.js" type="text/javascript"></script>
+	<script src="pages/script/update.js" type="text/javascript"></script>
 </body>
 </html>
