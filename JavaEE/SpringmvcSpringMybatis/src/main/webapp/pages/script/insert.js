@@ -20,3 +20,21 @@
 				}
 		});
 	}
+	function insertPerson(){
+		var ctx = '/SpringmvcSpringMybatis';
+		$.ajax({
+			type : "POST",
+			async : true,
+			url : ctx + "/insertPerson2.do",
+			data : {
+				"name":$('#name').val(),
+				"sex":$('#sex').val(),
+			},
+			error : function() {
+				alert("异常!")
+			},
+			success : function(res) {
+				window.location.href="/SpringmvcSpringMybatis/viewAllPerson.do"
+			}
+		});
+	}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xxx.dao.PersonMapper">
+	<resultMap id="BaseResultMap" type="Person">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="sex" property="sex" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- 根据门店编码和密码获取门店信息 -->
+	<select id="getById" resultMap="BaseResultMap">
+		select * from person where id = #{id,jdbcType=INTEGER}
+	</select>
+
+	<!-- 查询所有-->
+	<select id="getAll" resultMap="BaseResultMap">
+	select * from person
+	</select>
+	
+	<!-- 根据id删除 -->
+	<delete id="delById" parameterType="Integer">
+	delete from person where id = #{id,jdbcType=INTEGER}
+	</delete>
+	
+	<update id="update" parameterType="com.xxx.model.Person">
+	update person set name = #{name:VARCHAR} , sex = #{sex:VARCHAR}  where id = #{id:INTEGER}
+	</update>
+	
+	<insert id="insert" parameterType ="com.xxx.model.Person">
+	insert into person( name,sex) value (#{name:VARCHAR} , #{sex:VARCHAR} )
+	</insert>
+	
+	<update id="updateName" parameterType="com.xxx.model.Person">
+	update person set name = #{name:VARCHAR} where id = #{id:INTEGER}
+	</update>
+	
+	<update id="updateSex" parameterType="com.xxx.model.Person">
+	update person set sex = #{sex:VARCHAR} where id = #{id:INTEGER}
+	</update>
+	
+	
+</mapper>
