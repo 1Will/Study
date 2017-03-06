@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.shopstore.dao.ProductDetail">
+	<resultMap id="BaseResultMap" type="ProductDetail">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="original_price" property="oPrice" jdbcType="DOUBLE" />
+		<result column="real_price" property="rPrice" jdbcType="DOUBLE" />
+		<result column="jifen" property="jifen" jdbcType="DOUBLE" />
+		<result column="brand" property="brand" jdbcType="VARCHAR" />
+		<result column="No" property="no" jdbcType="VARCHAR" />
+		<result column="weight" property="weight" jdbcType="DOUBLE" />
+		<result column="p_Place" property="pPlace" jdbcType="VARCHAR" />
+		<result column="image1" property="image1" jdbcType="VARCHAR" />
+		<result column="image2" property="image2" jdbcType="VARCHAR" />
+		<result column="image3" property="image3" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<!-- 模糊搜索 -->
+	<select id="getProductByName" parameterType="String" resultMap="BaseResultMap">
+		select * from product_detail where name like #{name}
+	</select>
+	
+	<!-- 根据id返回详细信息 -->
+	<select id="getProductById" parameterType="Integer" resultMap="BaseResultMap">
+		select * from product_detail where id=#{id}
+	</select>
+	
+	
+	
+	
+	
+	
+	
+		
+<!-- 	<sql id="Base_Column_List">
+		 id, shop_no, shop_name, shop_type, shop_password, note 
+	</sql>
+
+	根据门店编码和密码获取门店信息
+	<select id="getByNoAndPwd" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from smi_shop_info
+		where shop_no = #{shopNo,jdbcType=VARCHAR} and shop_password = #{password,jdbcType=VARCHAR}
+	</select>
+
+	查询所有
+	<select id="getAll" resultMap="BaseResultMap">
+	select * from smi_shop_info
+	</select>
+	
+	根据id查询
+	<select id="getById" resultMap="BaseResultMap">
+	select * from smi_shop_info where id = #{id,jdbcType=INTEGER}
+	</select>
+	
+	根据id删除
+	<delete id="delById" parameterType="Integer">
+	delete from smi_shop_info where id = #{id,jdbcType=INTEGER}
+	</delete>
+	
+	<update id="update" parameterType="com.xxx.model.SmiShopInfo">
+	update smi_shop_info set shop_No = #{shopNo:VARCHAR} , shop_Name = #{shopName:VARCHAR} , shop_Type = #{shopType:VARCHAR} , shop_Password = #{shopPassword:VARCHAR} , note= #{note:VARCHAR} where id = #{id:INTEGER}
+	</update>
+	
+	<insert id="insert" parameterType ="com.xxx.model.SmiShopInfo">
+	insert into smi_shop_info( shop_No,shop_Name,shop_Type,shop_Password,note ) value (#{shopNo:VARCHAR} , #{shopName:VARCHAR} , #{shopType:VARCHAR} , #{shopPassword:VARCHAR} , #{note:VARCHAR} )
+	</insert> -->
+</mapper>
